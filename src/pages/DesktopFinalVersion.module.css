@@ -1,0 +1,355 @@
+:root {
+  --font-size-5xl: 24px; /* Example value, adjust as needed */
+  --gap-11xl: 20px; /* Example value, adjust as needed */
+  --gap-xl: 10px; /* Example value, adjust as needed */
+  --black-v2: #000000; /* Example value, adjust as needed */
+  --font-montserrat: 'Montserrat', sans-serif; /* Example value, adjust as needed */
+  --br-xl: 10px; /* Example value, adjust as needed */
+  --secondary: #00bc85; /* Example value, adjust as needed */
+  --font-size-5xl: 44px;
+}
+
+.firstPage{
+  min-height: 100vh;
+}
+
+.firstpagecontent {
+  box-sizing: border-box;
+  padding-top: 5%;
+  padding-left: 6%;
+  padding-right: 6%;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  font-size: 2.75rem; /* 44px */
+}
+
+.textcontent1,
+.textdescription {
+  align-items: flex-start;
+}
+.textdescription {
+  align-self: stretch;
+  gap: var(--gap-11xl);
+  font-size: var(--font-size-5xl);
+  color: var(--black-v2);
+}
+.textcontent1 {
+  width: 690px;
+  gap: var(--gap-xl);
+}
+.dphoneIcon {
+  width: 446.7px;
+  height: 415.5px;
+  object-fit: cover;
+}
+
+.firstPageTitle {
+  width: 100%;
+  letter-spacing: 0.1px;
+  line-height: 110%;
+  display: flex;
+  align-items: center;
+}
+
+.firstPageTitleDifferentColor {
+  color: var(--secondary);
+}
+
+.classicText {
+  font-weight: 300;
+  font-family: var(--font-montserrat);
+}
+.boldText {
+  font-weight: 500;
+  font-family: var(--font-montserrat);
+}
+
+.ctasubtitle,
+.firstpagedescription {
+  width: 620px;
+  letter-spacing: 0.1px;
+  line-height: 24px;
+  display: inline-block;
+}
+.ctasubtitle {
+  width: 300px;
+  line-height: 18px;
+  font-weight: 300;
+}
+
+.calltoaction,
+.textcontent1,
+.textdescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.calltoaction {
+  align-items: center;
+  text-align: center;
+  font-size: 1rem; /* 16px */
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+
+  .textcontent1{
+    width: 100%;
+  }
+
+  .firstpagecontent {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .textcontent1 {
+    text-align: center;
+    align-items: center;
+  }
+
+  .textdescription{
+    align-items: center;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+  .firstpagecontent {
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  
+  .firstPageTitle {
+    font-size: 1.875rem; /* 30px */
+  }
+  
+  .firstpagedescription {
+    width: 100%;
+    font-size: 1rem; /* 16px */
+  }
+  
+  .ctasubtitle {
+    font-size: 0.875rem; /* 14px */
+  }
+
+  .calltoaction button {
+    width: 300px;
+    height: 50px;
+  }
+
+  .dphoneIcon {
+    width: 223.35px; /* 50% of original width */
+    height: 207.75px; /* 50% of original height */
+  }
+}
+
+
+
+
+
+.secondPageBackground {
+  width: 100vw;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4%; 
+  padding-bottom: 6%;
+  background-color: #373D31;
+}
+
+.secondpagecontent {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem; /* Ajustement de l'espacement entre les éléments */
+  text-align: left;
+  color: var(--white);
+  width: 100vw;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Ajustement de l'espacement entre les éléments */
+  width: 40%;
+}
+
+.title {
+  font-size: 3.65rem; /* Ajustement de la taille de la police */
+  font-weight: 600;
+}
+
+.subtitles {
+  font-size: 1.75rem; /* Ajustement de la taille de la police */
+}
+
+.problemContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Ajustement de l'espacement entre les éléments */
+}
+
+/* Responsive design for tablets */
+@media (max-width: 1024px) {
+
+  .titleContainer {
+    width: 80%;
+  }
+
+  .title{
+    text-align: center;
+  }
+  
+  .secondpagecontent {
+    flex-direction: column;
+    align-items: center; /* Center align items */
+  }
+
+  .subtitles {
+    text-align: center; /* Center align text */
+  }
+}
+
+/* Responsive design for phones */
+@media (max-width: 600px) {
+  .title {
+    font-size: 1.865rem; /* 30px */
+  }
+
+  .subtitles {
+    font-size: 1rem; /* 16px */
+  }
+
+  .titleContainer{
+    padding-top: 5%;
+    gap: 2rem; /* Ajustement de l'espacement entre les éléments */
+  }
+
+  .secondpagecontent{
+    gap: 2rem; /* Ajustement de l'espacement entre les éléments */
+  }
+}
+
+
+
+
+.thirdpagecontent {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem; /* Ajustement de l'espacement entre les éléments */
+  width: 100vw;
+  align-items: center;
+  color: var(--secondary);
+  padding-top: 4%;
+  padding-bottom: 12%;
+  background-color: #8dcf6147;
+}
+
+.feelio {
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.solutionDescBold {
+  font-size: 1.5rem; /* Ajustement de la taille de la police */
+  font-weight: bold;
+}
+
+.solutionDescClassic {
+  font-size: 1.5rem; /* Ajustement de la taille de la police */
+}
+
+.thirdpagecontent,
+.thirdpagetextcontent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.thirdpagetextcontent {
+  width: 845px;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: var(--font-size-5xl);
+  color: var(--black-v2);
+}
+
+@media (max-width: 1024px) {
+  .thirdpagetextcontent {
+    width: 80%;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .thirdpagecontent {
+    gap: 1.5rem; /* Ajustement de l'espacement entre les éléments */
+  }
+
+  .thirdpagetextcontent {
+    width: 90%;
+    gap: 1.5rem;
+  }
+
+  .solutionDescBold {
+    font-size: 0.95rem; /* Ajustement de la taille de la police */
+  }
+  
+  .solutionDescClassic {
+    font-size: 0.875rem; /* Ajustement de la taille de la police */
+  }
+}
+
+
+
+.fourthPageContent{
+  width: 100vw;
+  height: 600px;
+  background-color: var(--secondary);
+  padding: 0.5%;
+  box-sizing: border-box;
+}
+
+.stepContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem; /* Ajustement de l'espacement entre les éléments */
+  justify-content: center;
+  align-items: center;
+  padding-top: 2%;
+}
+
+@media (max-width: 1024px) {
+
+  .fourthPageContent {
+    height: 100%;
+    padding-bottom: 10%;
+  }
+
+  .stepContainer {
+    flex-direction: column;
+  }
+}
+
+
+
+.fifthpage {
+  width: 100vw;
+  padding: 100px 4%; /* Padding autour de la page */
+  box-sizing: border-box;
+}
+
+.desktopfinalversion {
+  position: relative;
+  background-color: var(--white);
+  text-align: center;
+  font-size: var(--font-size-41xl);
+  color: var(--black-v2);
+  font-family: var(--font-montserrat);
+}

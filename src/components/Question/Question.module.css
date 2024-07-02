@@ -1,0 +1,60 @@
+  
+  .title {
+    font-size: 2rem; /* Taille de la police pour le titre */
+    font-weight: bold; /* Mettre en gras */
+    text-align: center; /* Centrer le texte */
+    margin-bottom: 2rem; /* Marge en bas du titre */
+  }
+  
+  .faqContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Espacement entre chaque FAQ */
+  }
+  
+  .faqItem {
+    border-bottom: 1px solid #000000; /* Bordure en bas */
+    margin-bottom: 2rem;
+  }
+  
+  .question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem; /* Taille de la police pour les questions */
+    cursor: pointer; /* Curseur pointeur pour indiquer que c'est cliquable */
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .chevron {
+    font-size: 1.5rem; /* Taille de la police pour le chevron */
+    padding-right: 2%;
+  }
+  
+  .answer {
+    font-size: 1.25rem; /* Taille de la police pour les réponses */
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+
+  @media (max-width: 1024px) {
+
+  }
+  
+  @media (max-width: 600px) {
+
+    .chevron {
+      font-size: 1rem; /* Taille de la police pour le chevron */
+    }
+
+    .question {
+      font-size: 1rem; /* Taille de la police pour les questions */
+    }
+
+    .answer {
+      font-size: 0.825rem; /* Taille de la police pour les réponses */
+    }
+  }
+  

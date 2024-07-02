@@ -1,0 +1,40 @@
+.buttonText {
+  position: relative;
+  letter-spacing: 0.1px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+
+.button {
+  border-radius: var(--br-xl);
+  background-color: var(--primary);
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-xs) var(--padding-5xl);
+  box-sizing: border-box;
+  gap: var(--gap-mini);
+  text-align: center;
+  font-size: var(--font-size-5xl);
+  color: var(--black-v2);
+  font-family: var(--font-monsterrat);
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .buttonText {
+    font-size: 18px;
+  }
+
+  .button {
+    width: 300px !important;
+    height: 50px !important;
+  }
+}

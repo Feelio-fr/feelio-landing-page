@@ -1,0 +1,69 @@
+.footer {
+    background-color: var(--grey);
+    width: 100vw;
+    height: 100px;
+    flex-direction: row;
+    justify-content: space-around;
+    box-sizing: border-box;
+    font-size: var(--font-size-5xl);
+    color: var(--white);
+}
+
+.copyrightFeelio2024,
+.footer,
+.footercontent {
+    display: flex;
+    align-items: center;
+}
+
+.logoFeelioIcon {
+    width: 122px;
+    height: 36.7px;
+}
+
+.footercontent {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 3rem;
+}
+
+.section {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.copyrightFeelio2024 {
+    font-size: 1.2rem;
+    font-weight: 100;
+    height: 37px;
+    display: flex;
+    align-items: flex-end;
+}
+
+
+/* Responsive design for tablets */
+@media (max-width: 1024px) {
+    .section{
+        display: none;
+    }
+
+}
+  
+/* Responsive design for phones */
+@media (max-width: 600px) {
+    .footer {
+        height: 70px;
+    }
+
+    .copyrightFeelio2024{
+        font-size: 0.875rem;
+        height: 30px;
+    }
+
+    .logoFeelioIcon {
+        width: 100px;
+        height: 30px;
+      }
+}

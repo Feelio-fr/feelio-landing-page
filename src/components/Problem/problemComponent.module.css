@@ -1,0 +1,76 @@
+.icon {
+  width: 60px;
+  position: relative;
+  height: 60px;
+  object-fit: cover;
+}
+.iconContainer {
+  width: 90px;
+  border-radius: var(--br-26xl);
+  background-color: var(--color-gainsboro);
+  height: 90px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-mini);
+  box-sizing: border-box;
+}
+.description,
+.title {
+  position: relative;
+  letter-spacing: 0.1px;
+  line-height: 26px;
+  font-weight: 500;
+}
+.description {
+  width: 509px;
+  font-size: var(--font-size-lg);
+  line-height: 18px;
+  font-weight: 300;
+  display: inline-block;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--gap-7xs);
+}
+
+.problemComponent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-xl);
+  text-align: left;
+  font-size: var(--font-size-7xl);
+  color: var(--white);
+  font-family: var(--font-roboto);
+}
+
+/* Responsive design for phones */
+@media (max-width: 600px) {
+  .title {
+    font-size: 1.125rem; /* 18px */
+  }
+
+  .description {
+    font-size: 0.85rem; /* 13px */
+  }
+
+  .iconContainer {
+    width: 70px;
+    height: 70px;
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .description{
+    width: 100%;
+  }
+}
