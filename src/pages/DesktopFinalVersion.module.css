@@ -51,6 +51,7 @@
   width: 100%;
   letter-spacing: 0.1px;
   line-height: 110%;
+  font-size: 2.75rem; /* 44px */
   display: flex;
   align-items: center;
 }
@@ -149,6 +150,7 @@
   .phoneImage {
     width: 400px; /* 50% of original width */
     height: 260px; /* 50% of original height */
+    margin-bottom: 10px;
   }
 }
 
@@ -238,6 +240,11 @@
   .secondpagecontent{
     gap: 2rem; /* Ajustement de l'espacement entre les éléments */
   }
+
+  .secondPageBackground{
+    padding: 4%;
+    padding-bottom: 15%;
+  }
 }
 
 
@@ -293,8 +300,11 @@
 
 @media (max-width: 600px) {
 
+
   .thirdpagecontent {
     gap: 1.5rem; /* Ajustement de l'espacement entre les éléments */
+    padding-top: 8%;
+    padding-bottom: 15%;
   }
 
   .thirdpagetextcontent {
@@ -342,6 +352,12 @@
   }
 }
 
+@media (max-width: 600px) {
+  .fourthPageContent {
+    padding-bottom: 15%;
+  }
+}
+
 
 
 .fifthpage {
@@ -356,17 +372,19 @@
 }
 
 .desktopfinalversion {
-  position: relative;
   background-color: var(--white);
   text-align: center;
   font-size: var(--font-size-41xl);
   color: var(--black-v2);
   font-family: var(--font-montserrat);
+  overflow-x: hidden;
 }
 
 @media (max-width: 1024px) {
   .fifthpage {
     padding: 4%;
+    padding-top: 8%;
+    padding-bottom: 15%;
   }
 
   .fifthpage h2 {
@@ -374,7 +392,6 @@
   }
 
   .fifthpage {
-
     min-height: 0;
   }
 }
