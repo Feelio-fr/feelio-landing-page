@@ -41,9 +41,9 @@
   width: 690px;
   gap: var(--gap-xl);
 }
-.dphoneIcon {
-  width: 446.7px;
-  height: 415.5px;
+.phoneImage {
+  width: 600px;
+  height: 430px;
   object-fit: cover;
 }
 
@@ -114,6 +114,10 @@
   .textdescription{
     align-items: center;
   }
+
+  .phoneImage{
+    margin-top: 20px;
+  }
 }
 
 /* Mobile Styles */
@@ -137,14 +141,14 @@
     font-size: 0.875rem; /* 14px */
   }
 
-  .calltoaction button {
+  .callToActionButton {
     width: 300px;
     height: 50px;
   }
 
-  .dphoneIcon {
-    width: 223.35px; /* 50% of original width */
-    height: 207.75px; /* 50% of original height */
+  .phoneImage {
+    width: 400px; /* 50% of original width */
+    height: 260px; /* 50% of original height */
   }
 }
 
@@ -161,6 +165,7 @@
   padding: 4%; 
   padding-bottom: 6%;
   background-color: #373D31;
+  position: relative;
 }
 
 .secondpagecontent {
@@ -341,8 +346,13 @@
 
 .fifthpage {
   width: 100vw;
-  padding: 100px 4%; /* Padding autour de la page */
+  padding: 4%; /* Padding autour de la page */
   box-sizing: border-box;
+  min-height: 100vh;
+}
+
+.fifthpage h2 {
+  margin: 0 0 5% 0;
 }
 
 .desktopfinalversion {
@@ -352,4 +362,19 @@
   font-size: var(--font-size-41xl);
   color: var(--black-v2);
   font-family: var(--font-montserrat);
+}
+
+@media (max-width: 1024px) {
+  .fifthpage {
+    padding: 4%;
+  }
+
+  .fifthpage h2 {
+    margin: 0 0 5% 0;
+  }
+
+  .fifthpage {
+
+    min-height: 0;
+  }
 }

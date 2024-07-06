@@ -25,11 +25,17 @@
     cursor: pointer; /* Curseur pointeur pour indiquer que c'est cliquable */
     margin-bottom: 1.5rem;
     margin-top: 1rem;
+    text-align: left;
   }
   
   .chevron {
     font-size: 1.5rem; /* Taille de la police pour le chevron */
     padding-right: 2%;
+  }
+
+  .chevron img{
+    width: 1.5rem;
+    height: 1.5rem;
   }
   
   .answer {

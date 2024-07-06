@@ -1,85 +1,130 @@
 :root {
-    --font-size-5xl: 24px; /* Example value, adjust as needed */
-    --gap-21xl: 20px; /* Example value, adjust as needed */
-  }
-  
+  --font-size-5xl: 24px; /* Example value, adjust as needed */
+  --gap-21xl: 20px; /* Example value, adjust as needed */
+  --primary-color: #77D14E;
+}
+
+.navbar {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 3%;
+  padding-left: 6%;
+  padding-right: 6%;
+  width: 100vw;
+  justify-content: space-between;
+  font-size: var(--font-size-5xl);
+}
+
+.logoFeelioIcon1 {
+  width: 186px;
+  height: 56px;
+  object-fit: cover;
+}
+
+.sectionParent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--gap-21xl);
+}
+
+.section {
+  text-decoration: none;
+  color: #000000;
+}
+
+.burgerMenu {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.burgerMenuContent {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--white);
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.burgerMenuContent.open {
+  transform: translateX(0);
+  display: flex;
+  box-sizing: border-box;
+  padding-top: 3%;
+  padding-left: 8%;
+  padding-right: 8%;
+  padding-bottom: 4%;
+}
+
+.burgerMenuHeader {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.closeMenu {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.burgerMenuLinks {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+  margin-top: 10%;
+}
+
+.separator {
+  width: 100%;
+  height: 3px;
+  background-color: var(--grey);
+  border: none;
+  margin: 30px 0;
+}
+
+@media (max-width: 1024px) {
   .navbar {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-top: 3%;
-    padding-left: 6%;
-    padding-right: 6%;
-    width: 100vw;
-    justify-content: space-between;
-    font-size: var(--font-size-5xl);
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-bottom: 4%;
   }
-  
-  .logoFeelioIcon1 {
-    width: 186px;
-    height: 56px;
-    object-fit: cover;
-  }
-  
+
   .sectionParent {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-    gap: var(--gap-21xl);
+    display: none;
   }
-  
-  .section {
-    text-decoration: none;
-    color: #000000;
-  }
-  
+
   .burgerMenu {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
+    display: block;
   }
-  
-  .burgerMenuContent {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    position: absolute;
-    top: 100px; /* Adjust as needed */
-    right: 100px; /* Adjust as needed */
-    background-color: white;
-    padding: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  @media (max-width: 1024px) {
 
-    .navbar {
-      padding-left: 8%;
-      padding-right: 8%;
-      padding-bottom: 4%;
+  .section {
+    font-size: larger;
+  }
+}
 
-    }
-  
-    .sectionParent {
-      display: none;
-    }
-  
-    .burgerMenu {
-      display: block;
-    }
-  
-    .burgerMenuContent {
-      display: flex;
-    }
+@media (max-width: 600px) {
+  .logoFeelioIcon1 {
+    width: 100px;
+    height: 30px;
   }
-  
-  @media (max-width: 600px) {
-    .logoFeelioIcon1 {
-      width: 100px;
-      height: 30px;
-    }
+
+  .section {
+    font-size: 1.5rem;
   }
-  
+}

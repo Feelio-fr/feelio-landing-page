@@ -56,6 +56,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
                   icon="/padlock@2x.png"
                   buttonWidth="350px"
                   buttonHeight="60px"
+                  className={styles.callToActionButton}
                 />
                 <div className={styles.ctasubtitle}>
                   <p>
@@ -65,7 +66,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
               </div>
             </div>
           </div>
-          <img className={styles.dphoneIcon} alt="" src="/3dphone@2x.png" />
+          <img className={styles.phoneImage} alt="" src="/3dphone@2x.png" />
         </div>
       </div>
 
@@ -163,7 +164,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
       </div>
 
       <div id="FAQ" className={styles.fifthpage}>
-        <div className={styles.title}>F.A.Q</div>
+        <h2 className={styles.title}>F.A.Q</h2>
 
         <FAQItem 
           question="Quelle est la politique de retour ?" 
