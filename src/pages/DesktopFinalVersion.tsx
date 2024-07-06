@@ -18,14 +18,14 @@ const DesktopFinalVersion: FunctionComponent = () => {
 
         <div className={styles.firstpagecontent}>
           <div className={styles.textcontent1}>
-            <b className={styles.firstPageTitle}>
+            <h1 className={styles.firstPageTitle}>
               <span>
                 <span>{`Bénéficiez d'un accompagnement sportif `}</span>
                 <span className={styles.firstPageTitleDifferentColor}>
                   entièrement personnalisé
                 </span>
               </span>
-            </b>
+            </h1>
 
             <div className={styles.textdescription}>
               <div className={styles.firstpagedescription}>
@@ -137,7 +137,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
       </div>
 
       <div className={styles.fourthPageContent}>
-        <h2 className={styles.title}>Comment ça fonctionne ?</h2>
+        <h2 className={styles.title}>Comment ça marche ?</h2>
 
         <div className={styles.stepContainer}>
           <Step
