@@ -20,7 +20,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
           <div className={styles.textcontent1}>
             <h1 className={styles.firstPageTitle}>
               <span>
-                <span>{`Bénéficiez d'un accompagnement sportif `}</span>
+                <span>{`Un accompagnement sportif `}</span>
                 <span className={styles.firstPageTitleDifferentColor}>
                   entièrement personnalisé
                 </span>
@@ -31,10 +31,6 @@ const DesktopFinalVersion: FunctionComponent = () => {
               <div className={styles.firstpagedescription}>
                 <p className={styles.classicText}>
                   <span>Une application conçue pour </span>
-                  <span className={styles.boldText}>
-                    diminuer vos douleurs
-                  </span>
-                  <span>, </span>
                   <span className={styles.boldText}>
                     limiter vos risques de blessure
                   </span>
