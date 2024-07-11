@@ -17,7 +17,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
         <Navbar />
 
         <div className={styles.firstpagecontent}>
-          <div className={styles.textcontent1}>
+          <div className={styles.leftSideFirstPageContent}>
             <h1 className={styles.firstPageTitle}>
               <span>
                 <span>{`Un accompagnement sportif `}</span>
@@ -62,7 +62,9 @@ const DesktopFinalVersion: FunctionComponent = () => {
               </div>
             </div>
           </div>
-          <img className={styles.phoneImage} alt="" src="/3dphone@2x.png" />
+          <div className={styles.rightSideFirstPageContent}>
+            <img className={styles.phoneImage} alt="" src="/3dphone@2x.png" />
+          </div>
         </div>
       </div>
 

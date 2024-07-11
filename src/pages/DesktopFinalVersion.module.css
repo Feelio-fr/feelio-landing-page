@@ -22,12 +22,12 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
   text-align: left;
   font-size: 2.75rem; /* 44px */
+  gap: 30px;
 }
 
-.textcontent1,
+.leftSideFirstPageContent,
 .textdescription {
   align-items: flex-start;
 }
@@ -37,14 +37,20 @@
   font-size: var(--font-size-5xl);
   color: var(--black-v2);
 }
-.textcontent1 {
-  width: 690px;
-  gap: var(--gap-xl);
+
+.leftSideFirstPageContent {
+  width: 100%;
+  height: 100%;
+  flex: 0 0 54%;
+}
+
+.rightSideFirstPageContent{
+  width: 100%;
+  height: 100%;
 }
 .phoneImage {
-  width: 600px;
-  height: 430px;
-  object-fit: cover;
+  width: 100%;
+  height: auto;
 }
 
 .firstPageTitle {
@@ -52,8 +58,6 @@
   letter-spacing: 0.1px;
   line-height: 110%;
   font-size: 2.75rem; /* 44px */
-  display: flex;
-  align-items: center;
 }
 
 .firstPageTitleDifferentColor {
@@ -71,7 +75,6 @@
 
 .ctasubtitle,
 .firstpagedescription {
-  width: 620px;
   letter-spacing: 0.1px;
   line-height: 24px;
   display: inline-block;
@@ -83,7 +86,7 @@
 }
 
 .calltoaction,
-.textcontent1,
+.leftSideFirstPageContent,
 .textdescription {
   display: flex;
   flex-direction: column;
@@ -98,7 +101,7 @@
 /* Tablet Styles */
 @media (max-width: 1024px) {
 
-  .textcontent1{
+  .leftSideFirstPageContent{
     width: 100%;
   }
 
@@ -107,7 +110,7 @@
     align-items: center;
   }
   
-  .textcontent1 {
+  .leftSideFirstPageContent {
     text-align: center;
     align-items: center;
   }
