@@ -30,6 +30,7 @@
 .section {
   text-decoration: none;
   color: #000000;
+  font-weight: 400;
 }
 
 .burgerMenu {

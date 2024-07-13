@@ -59,7 +59,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
       <div className={styles.secondPageBackground}>
         <div id="problematique" className={styles.secondpagecontent}>
           <div className={styles.titleContainer}>
-            <div className={styles.title}>Problématique</div>
+            <h2 className={styles.title}>Problématique</h2>
             <div className={styles.subtitles}>
               <span>La </span>
               <i className={styles.boldText}>pratique sportive</i>
@@ -101,7 +101,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
 
 
       <div id="solution" className={styles.thirdpagecontent}>
-        <div className={styles.title}>La solution ?</div>
+        <h2 className={styles.title}>La solution ?</h2>
         <div className={styles.thirdpagetextcontent}>
           <div className={styles.solutionDescBold}>
             <b>Fatigue, douleurs et stagnation ne sont plus une fatalité avec </b>
@@ -123,7 +123,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
       </div>
 
       <div className={styles.fourthPageContent}>
-        <h2 className={styles.title}>Comment ça marche ?</h2>
+        <h2 className={styles.title}>Comment ça marche&nbsp;?</h2>
 
         <div className={styles.stepContainer}>
           <Step
