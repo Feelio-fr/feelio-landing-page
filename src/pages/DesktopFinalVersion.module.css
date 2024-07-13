@@ -11,20 +11,18 @@
 
 .firstPage{
   min-height: 100vh;
+  padding-left: 6%;
+  padding-right: 6%;
 }
 
 .firstpagecontent {
-  box-sizing: border-box;
-  padding-top: 5%;
-  padding-left: 6%;
-  padding-right: 6%;
-  width: 100vw;
   display: flex;
   flex-direction: row;
   align-items: center;
   text-align: left;
   font-size: 2.75rem; /* 44px */
-  gap: 30px;
+  gap: 100px;
+  min-height: 90vh;
 }
 
 .leftSideFirstPageContent,
@@ -42,12 +40,9 @@
   width: 100%;
   height: 100%;
   flex: 0 0 54%;
+  max-width: 800px;
 }
 
-.rightSideFirstPageContent{
-  width: 100%;
-  height: 100%;
-}
 .phoneImage {
   width: 100%;
   height: auto;
@@ -55,12 +50,14 @@
 
 .firstPageTitle {
   width: 100%;
+  margin: 0;
   letter-spacing: 0.1px;
   line-height: 110%;
   font-size: 2.75rem; /* 44px */
 }
 
 .firstPageTitleDifferentColor {
+  font-style: italic;
   color: var(--secondary);
 }
 
@@ -98,16 +95,21 @@
   font-size: 1rem; /* 16px */
 }
 
+/* Big screen Styles */
+@media (min-width: 2000px) {
+  .rightSideFirstPageContent {
+    max-width: 40vw;
+  }
+}
+
 /* Tablet Styles */
 @media (max-width: 1024px) {
 
-  .leftSideFirstPageContent{
-    width: 100%;
-  }
-
   .firstpagecontent {
+    margin: 50px 0 50px 0;
     flex-direction: column;
     align-items: center;
+    gap: 50px;
   }
   
   .leftSideFirstPageContent {
@@ -115,23 +117,17 @@
     align-items: center;
   }
 
-  .textdescription{
-    align-items: center;
+  .rightSideFirstPageContent {
+    margin: 0 8% 0 8%;
   }
 
-  .phoneImage{
-    margin-top: 20px;
+  .textdescription{
+    align-items: center;
   }
 }
 
 /* Mobile Styles */
 @media (max-width: 600px) {
-  .firstpagecontent {
-    padding-top: 5%;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-  
   .firstPageTitle {
     font-size: 1.875rem; /* 30px */
   }
@@ -148,12 +144,6 @@
   .callToActionButton {
     width: 300px;
     height: 50px;
-  }
-
-  .phoneImage {
-    width: 400px; /* 50% of original width */
-    height: 260px; /* 50% of original height */
-    margin-bottom: 10px;
   }
 }
 
@@ -205,7 +195,7 @@
 }
 
 /* Responsive design for tablets */
-@media (max-width: 1024px) {
+@media (max-width: 1250px) {
 
   .titleContainer {
     width: 80%;
@@ -226,7 +216,7 @@
 }
 
 /* Responsive design for phones */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .title {
     font-size: 1.865rem; /* 30px */
   }

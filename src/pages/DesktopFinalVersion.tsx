@@ -30,19 +30,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
             <div className={styles.textdescription}>
               <div className={styles.firstpagedescription}>
                 <p className={styles.classicText}>
-                  <span>Une application conçue pour </span>
-                  <span className={styles.boldText}>
-                    limiter vos risques de blessure
-                  </span>
-                  <span>, </span>
-                  <span className={styles.boldText}>
-                    améliorer votre récupération
-                  </span> 
-                  <span> et </span>
-                  <span className={styles.boldText}>
-                    booster vos performances
-                  </span>
-                  <span>.</span>
+                  Une application conçue pour limiter vos risques de blessure, améliorer votre récupération et booster vos performances.
                 </p>
               </div>
 
