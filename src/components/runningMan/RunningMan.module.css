@@ -23,12 +23,12 @@
 
 @media (max-width: 1024px) {
   .skateboardingImage {
-    width: 120px;
+    width: 110px;
   }
 }
 
 @media (max-width: 600px) {
   .skateboardingImage {
-    width: 100px;
+    width: 80px;
   }
 }

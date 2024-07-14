@@ -20,8 +20,8 @@ const ProblemComponent: FunctionComponent<problemComponentType> = ({
         <img className={styles.icon} alt="" src={icon} />
       </div>
       <div className={styles.text}>
-        <div className={styles.title}>{title}</div>
-        <div className={styles.description}>{description}</div>
+        <h4 className={styles.title}>{title}</h4>
+        <p className={styles.description}>{description}</p>
       </div>
     </div>
   );

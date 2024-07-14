@@ -61,13 +61,13 @@ const DesktopFinalVersion: FunctionComponent = () => {
         <div id="problematique" className={styles.secondpagecontent}>
           <div className={styles.titleContainer}>
             <h2 className={styles.title}>Problématique</h2>
-            <div className={styles.subtitles}>
+            <h3 className={styles.subtitles}>
               <span>La </span>
               <i className={styles.boldText}>pratique sportive</i>
               <span> et le </span>
               <i className={styles.boldText}>mode de vie</i>
               <span> moderne posent de nombreux défis pour la santé et le bien-être. </span>
-            </div>
+            </h3>
           </div>
           <div className={styles.problemContainer}>
             <ProblemComponent

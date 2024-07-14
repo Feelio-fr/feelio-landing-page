@@ -31,7 +31,7 @@
 }
 .textdescription {
   align-self: stretch;
-  gap: var(--gap-11xl);
+  gap: 50px;
   font-size: var(--font-size-5xl);
   color: var(--black-v2);
 }
@@ -50,7 +50,7 @@
 
 .firstPageTitle {
   width: 100%;
-  margin: 0;
+  margin-bottom: 20px;
   letter-spacing: 0.1px;
   line-height: 110%;
   font-size: 2.75rem; /* 44px */
@@ -80,6 +80,7 @@
   width: 300px;
   line-height: 18px;
   font-weight: 300;
+  margin-top: 10px;
 }
 
 .calltoaction,
@@ -189,6 +190,7 @@
 
 .subtitles {
   font-size: 1.75rem; /* Ajustement de la taille de la police */
+  margin: 0;
 }
 
 .problemContainer {
@@ -296,6 +298,7 @@
 @media (max-width: 1024px) {
   .thirdpagecontent {
     padding-top: 7%;
+    padding-bottom: 180px;
   }
   
   .thirdpagetextcontent {
@@ -317,6 +320,7 @@
 @media (max-width: 600px) {
   .thirdpagecontent {
     padding-top: 8%;
+    padding-bottom: 150px;
   }
 
   .thirdpagetextcontent {
@@ -382,7 +386,6 @@
   width: 100vw;
   padding: 4%; /* Padding autour de la page */
   box-sizing: border-box;
-  min-height: 100vh;
 }
 
 .desktopfinalversion {
