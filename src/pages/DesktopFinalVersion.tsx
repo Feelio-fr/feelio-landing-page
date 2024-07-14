@@ -8,6 +8,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import Step from "../components/Step/Step";
 import FAQItem from "../components/Question/Question";
+import RunningMan from "../components/runningMan/RunningMan";
 
 const DesktopFinalVersion: FunctionComponent = () => {
   return (
@@ -120,6 +121,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
               blessures grâce aux séances Feelio.
             </b>
           </div>
+          <RunningMan />
         </div>
       </div>
 

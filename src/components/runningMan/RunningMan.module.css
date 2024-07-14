@@ -1,0 +1,9 @@
+.runningManContainer {
+    position: absolute;
+    bottom: -20px;
+  }
+
+.runningGuy {
+    width: 100px;
+    height: auto;
+}
