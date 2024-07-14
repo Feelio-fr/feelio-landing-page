@@ -247,7 +247,7 @@
   align-items: center;
   color: var(--secondary);
   padding-top: 5%;
-  padding-bottom: 12%;
+  padding-bottom: 200px;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -316,7 +316,6 @@
 
 @media (max-width: 600px) {
   .thirdpagecontent {
-    padding-bottom: 15%;
     padding-top: 8%;
   }
 

@@ -30,53 +30,22 @@
   top: 105px;
   left: 32px;
   width: 27px;
-  animation: swing 0.5s infinite alternate;
 }
 
 .rightArm {
   top: 110px;
   right: -15px;
   width: 37px;
-  animation: swing 0.5s infinite alternate-reverse;
 }
 
 .leftLeg {
   bottom: 6px;
   left: 25px;
   width: 48px;
-  animation: runBehind 0.5s infinite alternate;
 }
 
 .rightLeg {
   bottom: -4px;
   right: 6px;
   width: 38px;
-  animation: runAbove 0.5s infinite alternate-reverse;
-}
-
-@keyframes swing {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(10deg);
-  }
-}
-
-@keyframes runAbove {
-  0% {
-    transform: rotate(-10deg);
-  }
-  100% {
-    transform: rotate(10deg);
-  }
-}
-
-@keyframes runBehind {
-  0% {
-    transform: rotate(-30deg);
-  }
-  100% {
-    transform: rotate(-10deg);
-  }
 }
