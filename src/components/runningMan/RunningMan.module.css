@@ -16,7 +16,19 @@
 .skateboardingImage {
   bottom: 0;
   position: absolute;
-  width: 100px;
+  width: 150px;
   height: auto;
   z-index: 1;
+}
+
+@media (max-width: 1024px) {
+  .skateboardingImage {
+    width: 120px;
+  }
+}
+
+@media (max-width: 600px) {
+  .skateboardingImage {
+    width: 100px;
+  }
 }

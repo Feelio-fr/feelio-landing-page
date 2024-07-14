@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useTransform, useScroll } from 'framer-motion';
 import styles from './RunningMan.module.css';
-import skateboardingImage from '../../assets/runningGuy/skateboarding.png';
+import skateboardingImage from '../../assets/runningGuy/skateboarding2.png';
 
 const RunningMan = () => {
     const refGuy = useRef(null);
@@ -20,7 +20,7 @@ const RunningMan = () => {
         return () => window.removeEventListener('resize', handleResize)
     }, [])
     
-    const scrollTransformX = useTransform(scrollYProgress, [0, 1], [windowSize / 2 , -windowSize / 2 - 150]);
+    const scrollTransformX = useTransform(scrollYProgress, [0, 1], [windowSize / 2 , -windowSize / 2 - 200]);
 
     return (
         <motion.div
