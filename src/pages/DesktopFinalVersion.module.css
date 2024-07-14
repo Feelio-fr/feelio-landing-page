@@ -191,6 +191,7 @@
 .subtitles {
   font-size: 1.75rem; /* Ajustement de la taille de la police */
   margin: 0;
+  font-weight: 300;
 }
 
 .problemContainer {

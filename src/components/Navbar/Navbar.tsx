@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
       <div className={`${styles.burgerMenuContent} ${isMenuOpen ? styles.open : ''}`}>
         <div className={styles.burgerMenuHeader}>
           <img className={styles.logoFeelioIcon1} alt="logo Feelio" src="/logo-feelio@2x.png" />
-          <div className={styles.closeMenu} onClick={toggleMenu}>✖</div>
+          <div className={styles.closeMenu} onClick={toggleMenu}>✕</div>
         </div>
         <div className={styles.burgerMenuLinks}>
           <a className={styles.section} href="#problematique" onClick={toggleMenu}>Problématique</a>
