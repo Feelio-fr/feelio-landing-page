@@ -13,39 +13,10 @@
   height: 100%;
 }
 
-.body {
-  top: 75px;
+.skateboardingImage {
+  bottom: 0;
   position: absolute;
-  width: 40px;
+  width: 100px;
   height: auto;
   z-index: 1;
-}
-
-.leftArm, .rightArm, .leftLeg, .rightLeg {
-  position: absolute;
-  height: auto;
-}
-
-.leftArm {
-  top: 105px;
-  left: 32px;
-  width: 27px;
-}
-
-.rightArm {
-  top: 110px;
-  right: -15px;
-  width: 37px;
-}
-
-.leftLeg {
-  bottom: 6px;
-  left: 25px;
-  width: 48px;
-}
-
-.rightLeg {
-  bottom: -4px;
-  right: 6px;
-  width: 38px;
 }
