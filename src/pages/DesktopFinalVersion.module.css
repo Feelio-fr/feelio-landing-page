@@ -257,8 +257,20 @@
   color: var(--secondary);
   padding-top: 5%;
   padding-bottom: 12%;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.thirdpagecontent::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
   background-color: #d0e3c3;
-  border-radius: 50% 50% 0 0;
+  top: 0;
+  border-radius: 50%;
+  z-index: -1;
 }
 
 .feelio {
@@ -293,7 +305,6 @@
 @media (max-width: 1024px) {
   .thirdpagecontent {
     padding-top: 7%;
-    border-radius: 45% 45% 0 0;
   }
   
   .thirdpagetextcontent {
@@ -317,7 +328,6 @@
     gap: 1.5rem; /* Ajustement de l'espacement entre les éléments */
     padding-bottom: 15%;
     padding-top: 8%;
-    border-radius: 40% 40% 0 0;
   }
 
   .thirdpagetextcontent {
@@ -337,7 +347,6 @@
 @media (max-width: 425px) {
   .thirdpagecontent {
     padding-top: 15%;
-    border-radius: 35% 35% 0 0;
   }
 }
 
