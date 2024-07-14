@@ -99,26 +99,27 @@ const DesktopFinalVersion: FunctionComponent = () => {
       </div>
 
 
-
-      <div id="solution" className={styles.thirdpagecontent}>
-        <h2 className={styles.title}>La solution ?</h2>
-        <div className={styles.thirdpagetextcontent}>
-          <div className={styles.solutionDescBold}>
-            <b>Fatigue, douleurs et stagnation ne sont plus une fatalité avec </b>
-            <i className={styles.feelio}>Feelio</i>
-            <b>.</b>
+      <div className={styles.parentThirdPageContent}>
+        <div id="solution" className={styles.thirdpagecontent}>
+          <h2 className={styles.title}>La solution ?</h2>
+          <div className={styles.thirdpagetextcontent}>
+            <div className={styles.solutionDescBold}>
+              <b>Fatigue, douleurs et stagnation ne sont plus une fatalité avec </b>
+              <i className={styles.feelio}>Feelio</i>
+              <b>.</b>
+            </div>
+            <div className={styles.solutionDescClassic}>
+              Grâce à notre intelligence artificielle et nos algorithmes avancés,
+              Feelio analyse votre morpho-anatomie pour vous proposer des séances
+              sur mesure, avec des exercices adaptés à votre profil et validés par
+              des professionnels de la santé.
+            </div>
+            <b className={styles.solutionDescBold}>
+              Optez pour une solution innovante et efficace afin d’améliorer votre
+              mobilité, renforcer votre masse musculaire et vous prévenir des
+              blessures grâce aux séances Feelio.
+            </b>
           </div>
-          <div className={styles.solutionDescClassic}>
-            Grâce à notre intelligence artificielle et nos algorithmes avancés,
-            Feelio analyse votre morpho-anatomie pour vous proposer des séances
-            sur mesure, avec des exercices adaptés à votre profil et validés par
-            des professionnels de la santé.
-          </div>
-          <b className={styles.solutionDescBold}>
-            Optez pour une solution innovante et efficace afin d’améliorer votre
-            mobilité, renforcer votre masse musculaire et vous prévenir des
-            blessures grâce aux séances Feelio.
-          </b>
         </div>
       </div>
 

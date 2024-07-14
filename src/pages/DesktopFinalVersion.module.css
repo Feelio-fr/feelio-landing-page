@@ -244,6 +244,9 @@
 
 
 
+.parentThirdPageContent {
+  background-color: #373D31;
+}
 
 .thirdpagecontent {
   display: flex;
@@ -252,9 +255,10 @@
   width: 100vw;
   align-items: center;
   color: var(--secondary);
-  padding-top: 4%;
+  padding-top: 5%;
   padding-bottom: 12%;
-  background-color: #8dcf6147;
+  background-color: #d0e3c3;
+  border-radius: 50% 50% 0 0;
 }
 
 .feelio {
@@ -287,6 +291,11 @@
 }
 
 @media (max-width: 1024px) {
+  .thirdpagecontent {
+    padding-top: 7%;
+    border-radius: 45% 45% 0 0;
+  }
+  
   .thirdpagetextcontent {
     width: 80%;
     gap: 2rem;
@@ -304,12 +313,11 @@
 }
 
 @media (max-width: 600px) {
-
-
   .thirdpagecontent {
     gap: 1.5rem; /* Ajustement de l'espacement entre les éléments */
-    padding-top: 8%;
     padding-bottom: 15%;
+    padding-top: 8%;
+    border-radius: 40% 40% 0 0;
   }
 
   .thirdpagetextcontent {
@@ -325,6 +333,14 @@
     font-size: 0.875rem; /* Ajustement de la taille de la police */
   }
 }
+
+@media (max-width: 425px) {
+  .thirdpagecontent {
+    padding-top: 15%;
+    border-radius: 35% 35% 0 0;
+  }
+}
+
 
 
 
