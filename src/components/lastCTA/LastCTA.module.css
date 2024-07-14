@@ -33,8 +33,7 @@
   font-weight: 300;
 }
 
-/* Responsive design for tablets */
-@media (max-width: 1024px) {
+@media (max-width: 1400px) {
   .lastCtaContent{
     flex-direction: column;
     height: 100%;

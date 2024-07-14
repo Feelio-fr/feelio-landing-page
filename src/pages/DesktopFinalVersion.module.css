@@ -103,10 +103,10 @@
 }
 
 /* Tablet Styles */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
 
   .firstpagecontent {
-    margin: 50px 0 50px 0;
+    margin: 80px 0 50px 0;
     flex-direction: column;
     align-items: center;
     gap: 50px;
@@ -118,7 +118,7 @@
   }
 
   .rightSideFirstPageContent {
-    margin: 0 8% 0 8%;
+    margin: 0 20% 0 20%;
   }
 
   .textdescription{
@@ -128,6 +128,10 @@
 
 /* Mobile Styles */
 @media (max-width: 600px) {
+  .firstpagecontent {
+    margin-top: 40px;
+  }
+
   .firstPageTitle {
     font-size: 1.875rem; /* 30px */
   }
@@ -135,6 +139,10 @@
   .firstpagedescription {
     width: 100%;
     font-size: 1rem; /* 16px */
+  }
+
+  .rightSideFirstPageContent {
+    margin: 0 8% 0 8%;
   }
   
   .ctasubtitle {
@@ -175,15 +183,9 @@
 .titleContainer {
   display: flex;
   flex-direction: column;
-  gap: 2rem; /* Ajustement de l'espacement entre les éléments */
   width: 40%;
 }
 
-.title {
-  font-size: 3.65rem; /* Ajustement de la taille de la police */
-  font-weight: 600;
-  margin: 0;
-}
 
 .subtitles {
   font-size: 1.75rem; /* Ajustement de la taille de la police */
@@ -201,10 +203,6 @@
   .titleContainer {
     width: 100%;
   }
-
-  .title{
-    text-align: center;
-  }
   
   .secondpagecontent {
     flex-direction: column;
@@ -218,18 +216,12 @@
 
 /* Responsive design for phones */
 @media (max-width: 700px) {
-  .title {
-    font-size: 2.1rem;
-    margin: 0 10px 0 10px;
-  }
-
   .subtitles {
     font-size: 1rem; /* 16px */
   }
 
   .titleContainer{
     padding-top: 5%;
-    gap: 2rem; /* Ajustement de l'espacement entre les éléments */
   }
 
   .secondpagecontent{
@@ -251,7 +243,6 @@
 .thirdpagecontent {
   display: flex;
   flex-direction: column;
-  gap: 4rem; /* Ajustement de l'espacement entre les éléments */
   width: 100vw;
   align-items: center;
   color: var(--secondary);
@@ -325,7 +316,6 @@
 
 @media (max-width: 600px) {
   .thirdpagecontent {
-    gap: 1.5rem; /* Ajustement de l'espacement entre les éléments */
     padding-bottom: 15%;
     padding-top: 8%;
   }
@@ -355,7 +345,7 @@
 
 .fourthPageContent{
   width: 100vw;
-  height: 600px;
+  height: 660px;
   background-color: var(--secondary);
   padding: 4% 0 0 0;
   box-sizing: border-box;
@@ -369,11 +359,7 @@
   align-items: center;
 }
 
-.fourthPageContent .title {
-  margin-bottom: 40px;
-}
-
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
 
   .fourthPageContent {
     height: 100%;
@@ -400,10 +386,6 @@
   min-height: 100vh;
 }
 
-.fifthpage h2 {
-  margin: 0 0 5% 0;
-}
-
 .desktopfinalversion {
   background-color: var(--white);
   text-align: center;
@@ -420,11 +402,40 @@
     padding-bottom: 15%;
   }
 
-  .fifthpage h2 {
-    margin: 0 0 5% 0;
-  }
-
   .fifthpage {
     min-height: 0;
+  }
+}
+
+
+
+/* All titles of section */
+.title {
+  font-size: 3.65rem;
+  font-weight: 600;
+  margin: 20px 0 80px 0;
+}
+
+.secondpagecontent .title {
+  margin: 0 0 20px 0;
+}
+
+.thirdpagecontent .title {
+  margin: 0 0 40px 0;
+}
+
+/* Responsive design for tablets */
+@media (max-width: 1250px) {
+  .title{
+    font-size: 2.8rem;
+    text-align: center;
+  }
+}
+
+/* Responsive design for phones */
+@media (max-width: 700px) {
+  .title {
+    font-size: 2.1rem;
+    margin-bottom: 40px;
   }
 }

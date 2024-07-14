@@ -6,7 +6,9 @@ export type StepType = {
   sportsGymnastics?: string;
   stepTitle?: string;
   stepDesc?: string;
-  isLast?: boolean; // Add a prop to identify the last step
+  isLast?: boolean;
+  isMorpho?: boolean;
+  alt?: string;
 };
 
 const Step: FunctionComponent<StepType> = ({
@@ -15,16 +17,17 @@ const Step: FunctionComponent<StepType> = ({
   stepTitle,
   stepDesc,
   isLast = false,
+  alt,
 }) => {
   return (
     <div className={`${styles.step} ${className}`}>
       <div className={styles.stepIconContainer}>
-        <img className={styles.stepIcon} alt="" src={sportsGymnastics} />
+        <img className={styles.stepIcon} alt={alt} src={sportsGymnastics} />
       </div>
       {!isLast && <div className={styles.timeline}></div>}
       <div className={styles.stepText}>
-        <div className={styles.stepTitle}>{stepTitle}</div>
-        <div className={styles.stepDesc}>{stepDesc}</div>
+        <h3 className={styles.stepTitle}>{stepTitle}</h3>
+        <p className={styles.stepDesc}>{stepDesc}</p>
       </div>
     </div>
   );

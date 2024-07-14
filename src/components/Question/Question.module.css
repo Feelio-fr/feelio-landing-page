@@ -17,6 +17,10 @@
     margin-bottom: 2rem;
   }
   
+  #lastQuestion {
+    border-bottom : 0px;
+  }
+
   .question {
     display: flex;
     justify-content: space-between;
@@ -26,8 +30,10 @@
     margin-bottom: 1.5rem;
     margin-top: 1rem;
     text-align: left;
-    gap: 10px
+    gap: 20px;
+    font-weight: 500;
   }
+
   
   .chevron {
     font-size: 1.5rem; /* Taille de la police pour le chevron */

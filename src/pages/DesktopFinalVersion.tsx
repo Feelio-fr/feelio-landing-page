@@ -131,12 +131,14 @@ const DesktopFinalVersion: FunctionComponent = () => {
             sportsGymnastics="/sports-gymnastics.svg"
             stepTitle="Renseigner son profil utilisateur"
             stepDesc="Indiquez vos informations personnelles sur votre mode de vie et vos habitudes sportives."
+            alt="Quelqu'un qui fait du sport"
           />
           <Step
             className={styles.step}
             sportsGymnastics="/vector.svg"
             stepTitle="Faire son analyse morpho-anatomique"
             stepDesc="Avec une Intelligence Artificielle et plusieurs exercices nous analysons votre morpho-anatomie complète."
+            alt="Analyse d'un individu"
           />
           <Step
             className={styles.step}
@@ -144,6 +146,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
             stepTitle="Profiter des séances 100% personnalisées"
             stepDesc="Vous pouvez réaliser des séances quotidiennes et des séances avant et après votre entainement sportif."
             isLast={true}
+            alt="Quelqu'un qui sourit"
           />
         </div>
       </div>
@@ -152,20 +155,21 @@ const DesktopFinalVersion: FunctionComponent = () => {
         <h2 className={styles.title}>F.A.Q</h2>
 
         <FAQItem 
-          question="Quelle est la politique de retour ?" 
-          answer="Vous pouvez retourner votre produit dans les 30 jours suivant l'achat." 
+          question="Est-ce que Feelio convient à tous les niveaux sportifs&nbsp;?" 
+          answer="Feelio utilise une intelligence artificielle avancée pour analyser votre morpho-anatomie et vos habitudes sportives. En fonction de ces données, nous vous proposons des séances d'entraînement sur mesure adaptées à vos besoins et objectifs spécifiques." 
         />
         <FAQItem 
-          question="Quels sont les modes de paiement acceptés ?" 
-          answer="Nous acceptons les paiements par carte de crédit, PayPal et virement bancaire." 
+          question="Quels types d'exercices sont inclus dans les séances Feelio&nbsp;?" 
+          answer="Les séances Feelio incluent une variété d'exercices allant du renforcement musculaire à la flexibilité, en passant par des exercices de récupération et de prévention des blessures." 
         />
         <FAQItem 
-          question="Quelle est la politique de retour ?" 
-          answer="Vous pouvez retourner votre produit dans les 30 jours suivant l'achat." 
+          question="Puis-je utiliser Feelio en complément d'un autre programme d'entraînement&nbsp;?" 
+          answer="Absolument. Feelio peut compléter votre programme d'entraînement actuel en vous offrant des séances de récupération et des exercices spécifiques pour améliorer vos performances et prévenir les blessures." 
         />
         <FAQItem 
-          question="Quels sont les modes de paiement acceptés ?" 
-          answer="Nous acceptons les paiements par carte de crédit, PayPal et virement bancaire." 
+          question="Quels équipements sont nécessaires pour suivre les séances Feelio&nbsp;?" 
+          answer="Feelio est très flexible. Vous pouvez indiquer le matériel que vous avez à disposition, et nos séances s'adapteront en conséquence. De plus, de nombreux exercices peuvent être réalisés sans aucun équipement, vous permettant de vous entraîner où que vous soyez." 
+          isLast={true}
         />
       </div>
 
