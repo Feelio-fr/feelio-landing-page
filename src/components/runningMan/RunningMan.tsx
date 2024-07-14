@@ -1,6 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useViewportScroll, useTransform, useScroll } from 'framer-motion';
 import styles from './RunningMan.module.css';
+import bodyImage from '../../assets/runningGuy/body2.png';
+import leftLegImage from '../../assets/runningGuy/leftLeg2.png';
+import leftArmImage from '../../assets/runningGuy/leftArm.png';
+import rightLegImage from '../../assets/runningGuy/rightLeg2.png';
+import rightArmImage from '../../assets/runningGuy/rightArm.png'; 
 
 const RunningMan = () => {
 
@@ -31,7 +36,11 @@ const RunningMan = () => {
                 }}
                 ref={refGuy}
             >
-                <img className={styles.runningGuy} src="/runningGuy.png" alt="Homme qui court"></img>
+                <img src={bodyImage} alt="Corps d'un l'homme qui court" className={styles.body} />
+                <img src={leftLegImage} alt="Jambe gauche" className={styles.leftLeg} />
+                <img src={leftArmImage} alt="Bras gauche" className={styles.leftArm} />
+                <img src={rightLegImage} alt="Jambe droite" className={styles.rightLeg} />
+                <img src={rightArmImage} alt="Bras droit" className={styles.rightArm} />
             </motion.div>
         </>
     );
