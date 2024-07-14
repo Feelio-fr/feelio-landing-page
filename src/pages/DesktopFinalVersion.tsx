@@ -125,7 +125,6 @@ const DesktopFinalVersion: FunctionComponent = () => {
 
       <div className={styles.fourthPageContent}>
         <h2 className={styles.title}>Comment ça marche&nbsp;?</h2>
-
         <div className={styles.stepContainer}>
           <Step
             className={styles.step}
@@ -133,19 +132,18 @@ const DesktopFinalVersion: FunctionComponent = () => {
             stepTitle="Renseigner son profil utilisateur"
             stepDesc="Indiquez vos informations personnelles sur votre mode de vie et vos habitudes sportives."
           />
-
           <Step
             className={styles.step}
             sportsGymnastics="/vector.svg"
             stepTitle="Faire son analyse morpho-anatomique"
             stepDesc="Avec une Intelligence Artificielle et plusieurs exercices nous analysons votre morpho-anatomie complète."
           />
-
           <Step
             className={styles.step}
             sportsGymnastics="/sentiment-very-satisfied.svg"
             stepTitle="Profiter des séances 100% personnalisées"
             stepDesc="Vous pouvez réaliser des séances quotidiennes et des séances avant et après votre entainement sportif."
+            isLast={true}
           />
         </div>
       </div>

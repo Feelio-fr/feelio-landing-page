@@ -6,6 +6,7 @@ export type StepType = {
   sportsGymnastics?: string;
   stepTitle?: string;
   stepDesc?: string;
+  isLast?: boolean; // Add a prop to identify the last step
 };
 
 const Step: FunctionComponent<StepType> = ({
@@ -13,16 +14,14 @@ const Step: FunctionComponent<StepType> = ({
   sportsGymnastics,
   stepTitle,
   stepDesc,
+  isLast = false,
 }) => {
   return (
-    <div className={styles.step}>
+    <div className={`${styles.step} ${className}`}>
       <div className={styles.stepIconContainer}>
-        <img
-          className={styles.stepIcon}
-          alt=""
-          src={sportsGymnastics}
-        />
+        <img className={styles.stepIcon} alt="" src={sportsGymnastics} />
       </div>
+      {!isLast && <div className={styles.timeline}></div>}
       <div className={styles.stepText}>
         <div className={styles.stepTitle}>{stepTitle}</div>
         <div className={styles.stepDesc}>{stepDesc}</div>
