@@ -9,7 +9,7 @@
     color: var(--white);
 }
 
-.copyrightFeelio2024,
+.copyrightFeelio,
 .footer,
 .footercontent {
     display: flex;
@@ -34,7 +34,7 @@
     color: var(--white);
 }
 
-.copyrightFeelio2024 {
+.copyrightFeelio {
     font-size: 1.2rem;
     font-weight: 100;
     height: 37px;
@@ -57,7 +57,7 @@
         height: 70px;
     }
 
-    .copyrightFeelio2024{
+    .copyrightFeelio{
         font-size: 0.875rem;
         height: 30px;
     }

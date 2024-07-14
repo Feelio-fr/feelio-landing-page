@@ -4,6 +4,8 @@ import React from 'react';
 import styles from './Footer.module.css';
 
 const Footer: React.FC = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className={styles.footer}>
         <div className={styles.footercontent}>
@@ -16,7 +18,7 @@ const Footer: React.FC = () => {
         <a href="#solution" className={styles.section}>Solution</a>
         <a href="#FAQ" className={styles.section}>FAQ</a>
         </div>
-        <div className={styles.copyrightFeelio2024}>Copyright ©Feelio 2024</div>
+        <p className={styles.copyrightFeelio}>Copyright ©Feelio {currentYear} </p>
     </div>
   );
 };
