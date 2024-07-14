@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useRef } from "react";
 import LastCTA from "../components/lastCTA/LastCTA";
 import FirstStep from "../components/Step/Step";
 import ProblemComponent from "../components/Problem/problemComponent";
@@ -9,8 +9,41 @@ import Footer from "../components/Footer/Footer";
 import Step from "../components/Step/Step";
 import FAQItem from "../components/Question/Question";
 import RunningMan from "../components/runningMan/RunningMan";
+import { motion, Variants } from "framer-motion";
 
 const DesktopFinalVersion: FunctionComponent = () => {
+
+  // Animation title
+  const variantsMotionTitle: Variants = {
+    offscreen: {
+        opacity: 0,
+        x: -200
+      },
+    onscreen: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            delay: 0.2,
+            duration: 0.5
+        }
+    },
+};
+
+  // Animation description + CTA
+  const variantsMotionDescAndCTA: Variants = {
+    offscreen: {
+      opacity: 0,
+    },
+    onscreen: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: 0.4,
+        duration: 0.8
+      }
+    },
+  };
+
   return (
     <div className={styles.desktopfinalversion}>
 
@@ -19,37 +52,49 @@ const DesktopFinalVersion: FunctionComponent = () => {
 
         <div className={styles.firstpagecontent}>
           <div className={styles.leftSideFirstPageContent}>
-            <h1 className={styles.firstPageTitle}>
-              <span>
-                <span>{`Un accompagnement sportif `}</span>
+            <motion.div
+              variants={variantsMotionTitle}
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true}}
+            >
+              <h1 className={styles.firstPageTitle}>
+                {`Un accompagnement sportif `}
                 <span className={styles.firstPageTitleDifferentColor}>
                   entièrement personnalisé
                 </span>
-              </span>
-            </h1>
+              </h1>
+            </motion.div>
 
-            <div className={styles.textdescription}>
-              <div className={styles.firstpagedescription}>
-                <p className={styles.classicText}>
-                  Une application conçue pour limiter vos risques de blessure, améliorer votre récupération et booster vos performances.
-                </p>
-              </div>
-
-              <div className={styles.calltoaction}>
-                <Button
-                  buttonText="Je réserve ma place"
-                  icon="/padlock@2x.png"
-                  buttonWidth="350px"
-                  buttonHeight="60px"
-                  className={styles.callToActionButton}
-                />
-                <div className={styles.ctasubtitle}>
-                  <p>
-                    Inscription à la file d’attente gratuite en moins d’une minute
+            <motion.div
+                variants={variantsMotionDescAndCTA}
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: true}}
+              >
+              <div className={styles.textdescription}>
+                <div className={styles.firstpagedescription}>
+                  <p className={styles.classicText}>
+                    Une application conçue pour limiter vos risques de blessure, améliorer votre récupération et booster vos performances.
                   </p>
                 </div>
+
+                  <div className={styles.calltoaction}>
+                    <Button
+                      buttonText="Je réserve ma place"
+                      icon="/padlock@2x.png"
+                      buttonWidth="350px"
+                      buttonHeight="60px"
+                      className={styles.callToActionButton}
+                    />
+                    <div className={styles.ctasubtitle}>
+                      <p>
+                        Inscription à la file d’attente gratuite en moins d’une minute
+                      </p>
+                    </div>
+                  </div>
               </div>
-            </div>
+            </motion.div>
           </div>
           <div className={styles.rightSideFirstPageContent}>
             <img className={styles.phoneImage} alt="" src="/3dphone@2x.png" />
@@ -140,6 +185,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
             sportsGymnastics="/vector.svg"
             stepTitle="Faire son analyse morpho-anatomique"
             stepDesc="Avec une Intelligence Artificielle et plusieurs exercices nous analysons votre morpho-anatomie complète."
+            isMorpho={true}
             alt="Analyse d'un individu"
           />
           <Step
