@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, useTransform, useScroll } from 'framer-motion';
 import styles from './RunningMan.module.css';
 import skateboardingImage from '../../assets/runningGuy/skateboarding2.png';

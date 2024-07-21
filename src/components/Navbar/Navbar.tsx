@@ -24,9 +24,36 @@ const Navbar: React.FC<NavbarProps> = ({ problematiqueRef, solutionRef, faqRef }
     <div className={styles.navbar}>
       <img className={styles.logoFeelioIcon1} alt="logo Feelio" src="/logo-feelio@2x.png" />
       <div className={styles.sectionParent}>
-        <a className={styles.section} onClick={() => scrollToSection(problematiqueRef)}>Problématique</a>
-        <a className={styles.section} onClick={() => scrollToSection(solutionRef)}>Solution</a>
-        <a className={styles.section} onClick={() => scrollToSection(faqRef)}>F.A.Q</a>
+      <a
+          href="#problematique"
+          className={styles.section}
+          onClick={(e) => {
+            e.preventDefault(); // Empêche le comportement par défaut du lien
+            scrollToSection(problematiqueRef); // Active le défilement en douceur
+          }}
+        >
+          Problématique
+        </a>
+        <a
+          href="#solution"
+          className={styles.section}
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection(solutionRef);
+          }}
+        >
+          Solution
+        </a>
+        <a
+          href="#faq"
+          className={styles.section}
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection(faqRef);
+          }}
+        >
+          F.A.Q
+        </a>
       </div>
       <div className={styles.burgerMenu} onClick={toggleMenu}>
         ☰
