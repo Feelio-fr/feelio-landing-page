@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Question.module.css';
 
-const FAQItem = ({ question, answer }: { question: string, answer: string }) => {
+const FAQItem = ({ question, answer, isLast = false }: { question: string, answer: string, isLast?: boolean }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleFAQ = () => {
@@ -9,14 +9,14 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
   };
 
   return (
-    <div className={styles.faqItem}>
+    <div className={styles.faqItem} id={isLast ? styles.lastQuestion : ""}>
       <div className={styles.question} onClick={toggleFAQ}>
-        <span>{question}</span>
+        <p>{question}</p>
         <span className={styles.chevron}>
           <img src={isOpen ? "/up-arrows.png" : "/down-arrows.png"} alt={isOpen ? "Up Arrow" : "Down Arrow"} />
         </span>
       </div>
-      {isOpen && <div className={styles.answer}>{answer}</div>}
+      {isOpen && <p className={styles.answer}>{answer}</p>}
     </div>
   );
 };
