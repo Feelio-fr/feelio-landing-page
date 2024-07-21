@@ -1,8 +1,6 @@
-
 .stepText {
   max-width: 320px;
   gap: 0.75rem;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,10 +13,10 @@
   font-size: var(--font-size-11xl);
   color: var(--black-v2);
   font-family: var(--font-montserrat);
-
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
 .stepIcon {
@@ -29,53 +27,63 @@
 .stepIconContainer {
   width: 100px;
   height: 100px;
-  
   border-radius: 100px;
   background-color: var(--primary);
   display: flex;
-
   padding: var(--padding-mini);
   box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+.timeline {
+  width: 90%;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.4);
+  top: 16%;
+  left: 65%;
+  position: absolute;
+  z-index: 1;
 }
 
 .stepTitle {
-  max-width: 280px;
+  margin: 0;
   font-weight: 500;
 }
 
 .stepDesc {
+  margin: 0;
   font-size: 1.125rem;
   font-weight: 300;
 }
 
-
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .step {
     height: 100%;
     gap: 0.75rem;
+  }  
+
+  .timeline {
+    display: none;
   }
 }
 
-
-/* Responsive design for phones */
 @media (max-width: 600px) {
-
-
-  .stepIcon{
+  .stepIcon {
     width: 40px;
     height: 40px;
   }
 
-  .stepIconContainer{
+  .stepIconContainer {
     width: 70px;
     height: 70px;
   }
 
-  .stepTitle{
+  .stepTitle {
     font-size: 1.125rem;
   }
 
-  .stepDesc{
+  .stepDesc {
     font-size: 1rem;
   }
 }
