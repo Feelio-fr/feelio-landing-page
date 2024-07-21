@@ -11,6 +11,7 @@
   justify-content: space-between;
   font-size: var(--font-size-5xl);
   height: 10vh;
+  margin-top: 1rem;
 }
 
 .logoFeelioIcon1 {
@@ -31,6 +32,7 @@
   text-decoration: none;
   color: #000000;
   font-weight: 400;
+  cursor: pointer;
 }
 
 .burgerMenu {

@@ -1,4 +1,5 @@
-import { FunctionComponent, useRef } from "react";
+// DesktopFinalVersion.tsx
+import React, { FunctionComponent, useRef } from "react";
 import LastCTA from "../components/lastCTA/LastCTA";
 import FirstStep from "../components/Step/Step";
 import ProblemComponent from "../components/Problem/problemComponent";
@@ -12,22 +13,26 @@ import RunningMan from "../components/runningMan/RunningMan";
 import { motion, Variants } from "framer-motion";
 
 const DesktopFinalVersion: FunctionComponent = () => {
+  // Créer des références pour chaque section
+  const problematiqueRef = useRef<HTMLDivElement>(null);
+  const solutionRef = useRef<HTMLDivElement>(null);
+  const faqRef = useRef<HTMLDivElement>(null);
 
   // Animation title
   const variantsMotionTitle: Variants = {
     offscreen: {
-        opacity: 0,
-        x: -200
-      },
-    onscreen: {
-        opacity: 1,
-        x: 0,
-        transition: {
-            delay: 0.2,
-            duration: 0.5
-        }
+      opacity: 0,
+      x: -200
     },
-};
+    onscreen: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: 0.2,
+        duration: 0.5
+      }
+    },
+  };
 
   // Animation description + CTA
   const variantsMotionDescAndCTA: Variants = {
@@ -46,9 +51,13 @@ const DesktopFinalVersion: FunctionComponent = () => {
 
   return (
     <div className={styles.desktopfinalversion}>
-
       <div className={styles.firstPage}>
-        <Navbar />
+        {/* Passer les références à la Navbar */}
+        <Navbar
+          problematiqueRef={problematiqueRef}
+          solutionRef={solutionRef}
+          faqRef={faqRef}
+        />
 
         <div className={styles.firstpagecontent}>
           <div className={styles.leftSideFirstPageContent}>
@@ -56,7 +65,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
               variants={variantsMotionTitle}
               initial="offscreen"
               whileInView="onscreen"
-              viewport={{ once: true}}
+              viewport={{ once: true }}
             >
               <h1 className={styles.firstPageTitle}>
                 {`Un accompagnement sportif `}
@@ -67,32 +76,32 @@ const DesktopFinalVersion: FunctionComponent = () => {
             </motion.div>
 
             <motion.div
-                variants={variantsMotionDescAndCTA}
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true}}
-              >
+              variants={variantsMotionDescAndCTA}
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true }}
+            >
               <div className={styles.textdescription}>
                 <div className={styles.firstpagedescription}>
                   <p className={styles.classicText}>
-                    Une application conçue pour limiter vos risques de blessure, améliorer votre récupération et booster vos performances.
+                    Une application conçue pour <span>limiter vos risques de blessure</span>, <span>améliorer votre récupération</span> et <span>booster vos performances</span>.
                   </p>
                 </div>
 
-                  <div className={styles.calltoaction}>
-                    <Button
-                      buttonText="Je réserve ma place"
-                      icon="/padlock@2x.png"
-                      buttonWidth="350px"
-                      buttonHeight="60px"
-                      className={styles.callToActionButton}
-                    />
-                    <div className={styles.ctasubtitle}>
-                      <p>
-                        Inscription à la file d’attente gratuite en moins d’une minute
-                      </p>
-                    </div>
+                <div className={styles.calltoaction}>
+                  <Button
+                    buttonText="Je réserve ma place"
+                    icon="/padlock@2x.png"
+                    buttonWidth="350px"
+                    buttonHeight="60px"
+                    className={styles.callToActionButton}
+                  />
+                  <div className={styles.ctasubtitle}>
+                    <p>
+                      Inscription à la file d’attente gratuite en moins d’une minute
+                    </p>
                   </div>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -102,8 +111,8 @@ const DesktopFinalVersion: FunctionComponent = () => {
         </div>
       </div>
 
-      <div className={styles.secondPageBackground}>
-        <div id="problematique" className={styles.secondpagecontent}>
+      <div id="problematique" ref={problematiqueRef} className={styles.secondPageBackground}>
+        <div className={styles.secondpagecontent}>
           <div className={styles.titleContainer}>
             <h2 className={styles.title}>Problématique</h2>
             <h3 className={styles.subtitles}>
@@ -144,9 +153,8 @@ const DesktopFinalVersion: FunctionComponent = () => {
         </div>
       </div>
 
-
-      <div className={styles.parentThirdPageContent}>
-        <div id="solution" className={styles.thirdpagecontent}>
+      <div id="solution" ref={solutionRef} className={styles.parentThirdPageContent}>
+        <div className={styles.thirdpagecontent}>
           <h2 className={styles.title}>La solution ?</h2>
           <div className={styles.thirdpagetextcontent}>
             <div className={styles.solutionDescBold}>
@@ -199,32 +207,40 @@ const DesktopFinalVersion: FunctionComponent = () => {
         </div>
       </div>
 
-      <div id="FAQ" className={styles.fifthpage}>
+      <div id="FAQ" ref={faqRef} className={styles.fifthpage}>
         <h2 className={styles.title}>F.A.Q</h2>
-
-        <FAQItem 
-          question="Est-ce que Feelio convient à tous les niveaux sportifs&nbsp;?" 
-          answer="Feelio utilise une intelligence artificielle avancée pour analyser votre morpho-anatomie et vos habitudes sportives. En fonction de ces données, nous vous proposons des séances d'entraînement sur mesure adaptées à vos besoins et objectifs spécifiques." 
+        <FAQItem
+          question="Est-ce que Feelio convient à tous les niveaux sportifs&nbsp;?"
+          answer="Feelio utilise une intelligence artificielle avancée pour analyser votre morpho-anatomie et vos habitudes sportives. En fonction de ces données, nous vous proposons des séances d'entraînement sur mesure adaptées à vos besoins et objectifs spécifiques."
         />
-        <FAQItem 
-          question="Quels types d'exercices sont inclus dans les séances Feelio&nbsp;?" 
-          answer="Les séances Feelio incluent une variété d'exercices allant du renforcement musculaire à la flexibilité, en passant par des exercices de récupération et de prévention des blessures." 
+        <FAQItem
+          question="Quels types d'exercices sont inclus dans les séances Feelio&nbsp;?"
+          answer="Les séances Feelio incluent une variété d'exercices allant du renforcement musculaire à la flexibilité, en passant par des exercices de récupération et de prévention des blessures."
         />
-        <FAQItem 
-          question="Puis-je utiliser Feelio en complément d'un autre programme d'entraînement&nbsp;?" 
-          answer="Absolument. Feelio peut compléter votre programme d'entraînement actuel en vous offrant des séances de récupération et des exercices spécifiques pour améliorer vos performances et prévenir les blessures." 
+        <FAQItem
+          question="Puis-je utiliser Feelio en complément d'un autre programme d'entraînement&nbsp;?"
+          answer="Absolument. Feelio peut compléter votre programme d'entraînement actuel en vous offrant des séances de récupération et des exercices spécifiques pour améliorer vos performances et prévenir les blessures."
         />
-        <FAQItem 
-          question="Quels équipements sont nécessaires pour suivre les séances Feelio&nbsp;?" 
-          answer="Feelio est très flexible. Vous pouvez indiquer le matériel que vous avez à disposition, et nos séances s'adapteront en conséquence. De plus, de nombreux exercices peuvent être réalisés sans aucun équipement, vous permettant de vous entraîner où que vous soyez." 
-          isLast={true}
+        <FAQItem
+          question="Quels types d'exercices sont inclus dans les séances Feelio&nbsp;?"
+          answer="Les séances Feelio incluent une variété d'exercices allant du renforcement musculaire à la flexibilité, en passant par des exercices de récupération et de prévention des blessures."
+        />
+        <FAQItem
+          question="Quels types d'exercices sont inclus dans les séances Feelio&nbsp;?"
+          answer="Les séances Feelio incluent une variété d'exercices allant du renforcement musculaire à la flexibilité, en passant par des exercices de récupération et de prévention des blessures."
+        />
+        <FAQItem
+          question="Quels équipements sont nécessaires pour suivre les séances Feelio&nbsp;?"
+          answer="Feelio est très flexible. Vous pouvez indiquer le matériel que vous avez à disposition, et nos séances s'adapteront en conséquence. De plus, de nombreux exercices peuvent être réalisés sans aucun équipement, vous permettant de vous entraîner où que vous soyez."
         />
       </div>
 
-
       <LastCTA />
-      <Footer />
-   
+      <Footer
+        problematiqueRef={problematiqueRef}
+        solutionRef={solutionRef}
+        faqRef={faqRef}
+      />
     </div>
   );
 };

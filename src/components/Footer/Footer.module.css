@@ -32,6 +32,7 @@
     font-weight: 500;
     text-decoration: none;
     color: var(--white);
+    cursor: pointer;
 }
 
 .copyrightFeelio {

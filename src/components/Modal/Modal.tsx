@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
 import styles from "./Modal.module.css";
 
 type ModalProps = {
@@ -7,6 +7,11 @@ type ModalProps = {
 };
 
 const Modal: FunctionComponent<ModalProps> = ({ isOpen, onClose }) => {
+  const [firstName, setFirstName] = useState('');
+  const [email, setEmail] = useState('');
+  const [isFirstNameFocused, setIsFirstNameFocused] = useState(false);
+  const [isEmailFocused, setIsEmailFocused] = useState(false);
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -14,7 +19,6 @@ const Modal: FunctionComponent<ModalProps> = ({ isOpen, onClose }) => {
       document.body.style.overflow = 'unset';
     }
     
-    // Cleanup function to reset overflow when component unmounts
     return () => {
       document.body.style.overflow = 'unset';
     };
@@ -32,13 +36,37 @@ const Modal: FunctionComponent<ModalProps> = ({ isOpen, onClose }) => {
           <div className={styles.imageOverlay}>
             <h2 className={styles.overlayTitle}>Inscription à la waitlist</h2>
             <p className={styles.overlayDescription}>
-            Inscrivez-vous à la file d'attente pour obtenir un accès anticipé à l'application et découvrir toutes ses fonctionnalités gratuitement avant tout le monde. Vous recevrez un e-mail dès que l'application sera disponible sur les stores.
+              Inscrivez-vous à la file d'attente pour obtenir un accès anticipé à l'application et découvrir toutes ses fonctionnalités gratuitement avant tout le monde. Vous recevrez un e-mail dès que l'application sera disponible sur les stores.
             </p>
           </div>
         </div>
         <div className={styles.inputContainer}>
-          <input type="text" placeholder="Prénom" className={styles.input} />
-          <input type="email" placeholder="Adresse mail" className={styles.input} />
+          <div className={styles.inputWrapper}>
+            <input
+              type="text"
+              className={`${styles.input} ${styles.inputFirstName}`}
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              onFocus={() => setIsFirstNameFocused(true)}
+              onBlur={() => setIsFirstNameFocused(false)}
+              required
+              placeholder=" " 
+            />
+            <label className={`${styles.label} ${(isFirstNameFocused || firstName) ? styles.labelFilled : ''}`}>Prénom</label>
+          </div>
+          <div className={styles.inputWrapper}>
+            <input
+              type="email"
+              className={`${styles.input} ${styles.inputEmail}`}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              onFocus={() => setIsEmailFocused(true)}
+              onBlur={() => setIsEmailFocused(false)}
+              required
+              placeholder=" "
+            />
+            <label className={`${styles.label} ${(isEmailFocused || email) ? styles.labelFilled : ''}`}>Adresse mail</label>
+          </div>
         </div>
         <button className={styles.modalButton} onClick={onClose}>
           Je m'inscris

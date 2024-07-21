@@ -3,16 +3,18 @@
     font-size: 2rem; /* Taille de la police pour le titre */
     font-weight: bold; /* Mettre en gras */
     text-align: center; /* Centrer le texte */
-    margin-bottom: 2rem; /* Marge en bas du titre */
+    margin-bottom: 1rem; /* Marge en bas du titre */
   }
   
   .faqContainer {
     display: flex;
+
     flex-direction: column;
     gap: 2rem; /* Espacement entre chaque FAQ */
   }
   
   .faqItem {
+    width: 80%;
     border-bottom: 1px solid #000000; /* Bordure en bas */
     margin-bottom: 2rem;
   }
@@ -25,7 +27,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.5rem; /* Taille de la police pour les questions */
+    font-size: 1.4rem; /* Taille de la police pour les questions */
     cursor: pointer; /* Curseur pointeur pour indiquer que c'est cliquable */
     margin-bottom: 1.5rem;
     margin-top: 1rem;
