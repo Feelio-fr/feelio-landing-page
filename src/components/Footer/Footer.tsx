@@ -22,9 +22,36 @@ const Footer: React.FC<FooterProps> = ({ problematiqueRef, solutionRef, faqRef }
             alt="Logo Feelio"
             src="/logo-feelio@2x.png"
         />
-        <a className={styles.section} onClick={() => scrollToSection(problematiqueRef)}>Problématique</a>
-        <a className={styles.section} onClick={() => scrollToSection(solutionRef)}>Solution</a>
-        <a className={styles.section} onClick={() => scrollToSection(faqRef)}>FAQ</a>
+        <a
+          href="#problematique"
+          className={styles.section}
+          onClick={(e) => {
+            e.preventDefault(); // Empêche le comportement par défaut du lien
+            scrollToSection(problematiqueRef); // Active le défilement en douceur
+          }}
+        >
+          Problématique
+        </a>
+        <a
+          href="#solution"
+          className={styles.section}
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection(solutionRef);
+          }}
+        >
+          Solution
+        </a>
+        <a
+          href="#faq"
+          className={styles.section}
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection(faqRef);
+          }}
+        >
+          F.A.Q
+        </a>
         </div>
         <p className={styles.copyrightFeelio}>Copyright ©Feelio {currentYear} </p>
     </div>

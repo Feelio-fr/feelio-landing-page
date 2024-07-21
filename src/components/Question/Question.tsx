@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './Question.module.css';
 
 const FAQItem = ({ question, answer, isLast = false }: { question: string, answer: string, isLast?: boolean }) => {

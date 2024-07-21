@@ -1,7 +1,6 @@
 // DesktopFinalVersion.tsx
-import React, { FunctionComponent, useRef } from "react";
+import { FunctionComponent, useRef } from "react";
 import LastCTA from "../components/lastCTA/LastCTA";
-import FirstStep from "../components/Step/Step";
 import ProblemComponent from "../components/Problem/problemComponent";
 import Button from "../components/Button/Button";
 import styles from "./DesktopFinalVersion.module.css";
@@ -106,7 +105,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
             </motion.div>
           </div>
           <div className={styles.rightSideFirstPageContent}>
-            <img className={styles.phoneImage} alt="" src="/3dphone@2x.png" />
+            <img className={styles.phoneImage} alt="Phone Image 3D representing Feelio Application" src="/3dphone@2x.webp" />
           </div>
         </div>
       </div>

@@ -43,6 +43,7 @@
   max-width: 800px;
 }
 
+
 .phoneImage {
   width: 100%;
   height: auto;
@@ -101,6 +102,7 @@
   .rightSideFirstPageContent {
     max-width: 40vw;
   }
+
 }
 
 /* Tablet Styles */
