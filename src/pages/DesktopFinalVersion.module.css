@@ -164,7 +164,7 @@
 
 .secondPageBackground {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -203,6 +203,10 @@
 
 /* Responsive design for tablets */
 @media (max-width: 1250px) {
+
+  .secondPageBackground {
+    height: max-content;
+  }
 
   .titleContainer {
     width: 100%;
