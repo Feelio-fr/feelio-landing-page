@@ -64,11 +64,38 @@ const Navbar: React.FC<NavbarProps> = ({ problematiqueRef, solutionRef, faqRef }
           <div className={styles.closeMenu} onClick={toggleMenu}>✕</div>
         </div>
         <div className={styles.burgerMenuLinks}>
-          <a className={styles.section} onClick={() => scrollToSection(problematiqueRef)}>Problématique</a>
+          <a 
+            href="#problematique"
+            className={styles.section} 
+            onClick={(e) => {
+              e.preventDefault(); // Empêche le comportement par défaut du lien
+              scrollToSection(problematiqueRef); // Active le défilement en douceur
+            }}
+          >
+            Problématique
+          </a>
           <hr className={styles.separator} />
-          <a className={styles.section} onClick={() => scrollToSection(solutionRef)}>Solution</a>
+          <a 
+            href="#solution"
+            className={styles.section} 
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection(solutionRef);
+            }}
+            >
+              Solution
+            </a>
           <hr className={styles.separator} />
-          <a className={styles.section} onClick={() => scrollToSection(faqRef)}>F.A.Q</a>
+          <a 
+            href="#faq" 
+            className={styles.section} 
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection(faqRef);
+            }}
+          >
+              F.A.Q
+          </a>
         </div>
       </div>
     </div>
