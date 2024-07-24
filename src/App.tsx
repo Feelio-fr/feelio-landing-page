@@ -1,52 +1,35 @@
-import { useEffect } from "react";
-import {
-  Routes,
-  Route,
-  useNavigationType,
-  useLocation,
-} from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import DesktopFinalVersion from "./pages/DesktopFinalVersion";
+import Modal from "./components/Modal/Modal"; // Assurez-vous d'importer votre composant Modal correctement
 
 function App() {
-  const action = useNavigationType();
   const location = useLocation();
-  const pathname = location.pathname;
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    if (action !== "POP") {
-      window.scrollTo(0, 0);
+    const searchParams = new URLSearchParams(location.search);
+    console.log("searchParams", searchParams);
+    if (searchParams.has("signup")) {
+      console.log("signup parameter detected");
+      setIsModalOpen(true);
     }
-  }, [action, pathname]);
+  }, [location]);
 
-  useEffect(() => {
-    let title = "";
-    let metaDescription = "";
-
-    switch (pathname) {
-      case "/":
-        title = "";
-        metaDescription = "";
-        break;
-    }
-
-    if (title) {
-      document.title = title;
-    }
-
-    if (metaDescription) {
-      const metaDescriptionTag: HTMLMetaElement | null = document.querySelector(
-        'head > meta[name="description"]'
-      );
-      if (metaDescriptionTag) {
-        metaDescriptionTag.content = metaDescription;
-      }
-    }
-  }, [pathname]);
+  const closeModal = () => {
+    setIsModalOpen(false);
+    // Remove the "signup" parameter from the URL
+    const searchParams = new URLSearchParams(location.search);
+    searchParams.delete("signup");
+    window.history.replaceState({}, '', `${location.pathname}?${searchParams.toString()}`);
+  };
 
   return (
-    <Routes>
-      <Route path="/" element={<DesktopFinalVersion />} />
-    </Routes>
+    <>
+      <DesktopFinalVersion />
+      <Modal isOpen={isModalOpen} onClose={closeModal} />
+    </>
   );
 }
+
 export default App;
