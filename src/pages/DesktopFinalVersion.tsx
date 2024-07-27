@@ -175,6 +175,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
           </div>
           <RunningMan />
         </div>
+          <div className={styles.inclinateDiv}></div>
       </div>
 
       <div className={styles.fourthPageContent}>

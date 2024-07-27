@@ -350,6 +350,12 @@
 }
 
 
+.inclinateDiv {
+  background-color: #d0e3c3;
+  border-bottom: 60px solid var(--secondary);
+  border-right: 150vh solid transparent;
+  position: absolute;
+}
 
 
 .fourthPageContent{
@@ -358,6 +364,7 @@
   background-color: var(--secondary);
   padding: 3% 0 0 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .stepContainer {

@@ -21,12 +21,14 @@ const RunningMan = () => {
     }, [])
     
     const scrollTransformX = useTransform(scrollYProgress, [0, 1], [windowSize / 2 , -windowSize / 2 - 200]);
+    const scrollTransformY = useTransform(scrollYProgress, [0, 1], [60, 0]);
 
     return (
         <motion.div
             className={styles.runningManContainer}
             style={{
                 x: scrollTransformX,
+                y: scrollTransformY,
             }}
             ref={refGuy}
         >
