@@ -20,8 +20,8 @@ const RunningMan = () => {
         return () => window.removeEventListener('resize', handleResize)
     }, [])
     
-    const scrollTransformX = useTransform(scrollYProgress, [0, 1], [windowSize / 2 , -windowSize / 2 - 200]);
-    const scrollTransformY = useTransform(scrollYProgress, [0, 1], [60, 0]);
+    const scrollTransformX = useTransform(scrollYProgress, [0, 1], [windowSize , -200 ]);
+    const scrollTransformY = useTransform(scrollYProgress, [0, 1], [70, 0]);
 
     return (
         <motion.div

@@ -173,9 +173,10 @@ const DesktopFinalVersion: FunctionComponent = () => {
               blessures grâce aux séances Feelio.
             </b>
           </div>
-          <RunningMan />
         </div>
-          <div className={styles.inclinateDiv}></div>
+          <div className={styles.inclinateDiv}>
+            <RunningMan />
+          </div>
       </div>
 
       <div className={styles.fourthPageContent}>
