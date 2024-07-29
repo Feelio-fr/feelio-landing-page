@@ -226,7 +226,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
         />
         <FAQItem
           question="Combien de temps durent les séances Feelio&nbsp;?"
-          answer="Feelio propose des séances de différentes durées pour s’adapter à votre emploi du temps. Vous pouvez choisir des séances courtes de 10 à 15 minutes ou des sessions plus longues allant jusqu’à 60 minutes selon vos disponibilités et vos objectifs."
+          answer="Feelio propose des séances de différentes durées pour s’adapter à votre emploi du temps. Vous pouvez choisir des séances courtes de quelques minutes ou des sessions plus longues selon vos disponibilités et vos objectifs."
         />
         <FAQItem
           question="Quels équipements sont nécessaires pour suivre les séances Feelio&nbsp;?"
