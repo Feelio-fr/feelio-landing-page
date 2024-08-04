@@ -23,9 +23,9 @@ const RunningMan = () => {
 
     useEffect(() => {
         const unsubscribe = scrollYProgress.onChange((value) => {
-            // if (value <= scrollProgress.get()) {
+            if (value <= scrollProgress.get()) {
                 scrollProgress.set(value);
-            // }
+            }
         });
         return () => unsubscribe();
     }, [scrollYProgress, scrollProgress]);
