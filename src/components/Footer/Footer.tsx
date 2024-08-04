@@ -33,11 +33,13 @@ const Footer: React.FC<FooterProps> = ({ problematiqueRef, solutionRef, faqRef }
     <div className={styles.footer}>
       <div className={styles.footerContent}>
         <div className={styles.footerPageLink}>
-        <img
-            className={styles.logoFeelioIcon}
-            alt="Logo Feelio"
-            src="/logo-feelio@2x.png"
-        />
+        <Link to="/">
+          <img
+              className={styles.logoFeelioIcon}
+              alt="Logo Feelio"
+              src="/logo-feelio@2x.png"
+          />
+        </Link>
         <a
           href="#problematique"
           className={styles.section}
