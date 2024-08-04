@@ -1,14 +1,14 @@
 // DesktopFinalVersion.tsx
 import { FunctionComponent, useRef } from "react";
-import LastCTA from "../components/lastCTA/LastCTA";
-import ProblemComponent from "../components/Problem/problemComponent";
-import Button from "../components/Button/Button";
-import styles from "./DesktopFinalVersion.module.css";
-import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Footer/Footer";
-import Step from "../components/Step/Step";
-import FAQItem from "../components/Question/Question";
-import RunningMan from "../components/runningMan/RunningMan";
+import LastCTA from "../../components/lastCTA/LastCTA";
+import ProblemComponent from "../../components/Problem/problemComponent";
+import Button from "../../components/Button/Button";
+import styles from "./Homepage.module.css";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
+import Step from "../../components/Step/Step";
+import FAQItem from "../../components/Question/Question";
+import RunningMan from "../../components/runningMan/RunningMan";
 import { motion, Variants } from "framer-motion";
 
 const DesktopFinalVersion: FunctionComponent = () => {

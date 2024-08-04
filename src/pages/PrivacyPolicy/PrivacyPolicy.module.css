@@ -1,0 +1,111 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: var(--font-montserrat);
+    background-color: var(--white);
+}
+
+.privacyPolicyContent{
+    padding-left: 6%;
+    padding-right: 6%;  
+    padding-bottom: 6%;
+}
+
+.title{
+    font-size: 3.65rem;
+    font-weight: 600;
+    margin: 40px 0 20px 0;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.subtitle{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 20px 0 80px 0;
+    text-align: center;
+}
+
+.paragraphBigTitle{
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: 20px 0 20px 0;
+}
+
+.paragraphTitle{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 20px 0 20px 0;
+}
+
+.paragraphSmallTitle{
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 5px 0 5px 0;
+}
+
+.paragraphText{
+    text-justify: auto;
+}
+
+/* Responsive design for tablets */
+@media (max-width: 1250px) {
+    .title{
+        font-size: 2.8rem;
+        text-align: center;
+    }
+
+    .subtitle{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .paragraphTitle{
+        font-size: 1.5rem;
+    }
+
+    .paragraphBigTitle{
+        font-size: 1.75rem;
+    }
+
+    .paragraphSmallTitle{
+        font-size: 1.25rem;
+    }
+}
+
+/* Responsive design for phones */
+@media (max-width: 700px) {
+    .title{
+        font-size: 2.1rem;
+        text-align: center;
+    }
+
+    .subtitle{
+        font-size: 1.25rem;
+        text-align: center;
+        margin: 20px 0 40px 0;
+    }
+
+    .paragraphBigTitle{
+        font-size: 1.5rem;
+    }
+
+    .paragraphTitle{
+        font-size: 1rem;
+    }
+
+    .paragraphSmallTitle{
+        font-size: 1rem;
+    }
+
+    .paragraphText{
+        font-size: 0.875rem;
+    }
+
+    strong{
+        font-weight: 600;
+    }
+
+}

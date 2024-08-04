@@ -26,8 +26,15 @@ const Modal: FunctionComponent<ModalProps> = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
+  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    // Vérifie si le clic est effectué sur l'overlay et non sur le contenu de la modal
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
-    <div className={styles.modalOverlay}>
+    <div className={styles.modalOverlay} onClick={handleOverlayClick}>
       <div className={styles.modalContent}>
         <button className={styles.closeButton} onClick={onClose}>
           &times;

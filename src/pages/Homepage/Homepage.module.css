@@ -164,7 +164,6 @@
 
 .secondPageBackground {
   width: 100vw;
-  min-height: 100vh;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -199,6 +198,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem; /* Ajustement de l'espacement entre les éléments */
+  margin-top: 20px;
 }
 
 /* Responsive design for tablets */
@@ -220,6 +220,10 @@
   .subtitles {
     text-align: center; /* Center align text */
   }
+
+  .problemContainer{
+    margin-top: 0px;
+  }
 }
 
 /* Responsive design for phones */
@@ -240,6 +244,10 @@
     padding: 4%;
     padding-bottom: 15%;
   }
+
+  .problemContainer{
+    margin-top: 0px;
+  }
 }
 
 
@@ -255,7 +263,7 @@
   align-items: center;
   color: var(--secondary);
   padding-top: 5%;
-  padding-bottom: 200px;
+  padding-bottom: 12rem;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -427,7 +435,9 @@
 }
 
 .secondpagecontent .title {
-  margin: 0 0 20px 0;
+  margin: 20px 0 20px 0;
+  font-size: 3.65rem;
+  font-weight: 600;
 }
 
 .thirdpagecontent .title {
@@ -440,6 +450,10 @@
     font-size: 2.8rem;
     text-align: center;
   }
+
+  .secondpagecontent .title {
+    font-size: 2.8rem;
+  }
 }
 
 /* Responsive design for phones */
@@ -448,4 +462,9 @@
     font-size: 2.1rem;
     margin-bottom: 40px;
   }
+
+  .secondpagecontent .title {
+    font-size: 2.1rem;
+  }
+  
 }

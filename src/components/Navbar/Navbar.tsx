@@ -1,6 +1,6 @@
-// Navbar.tsx
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styles from './Navbar.module.css';
+import { Link, useLocation } from 'react-router-dom';
 
 interface NavbarProps {
   problematiqueRef: React.RefObject<HTMLDivElement>;
@@ -10,6 +10,7 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ problematiqueRef, solutionRef, faqRef }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -20,16 +21,27 @@ const Navbar: React.FC<NavbarProps> = ({ problematiqueRef, solutionRef, faqRef }
     setIsMenuOpen(false);
   };
 
+  const handleNavigation = (sectionRef: React.RefObject<HTMLDivElement>, path: string) => {
+    if (location.pathname === path) {
+      scrollToSection(sectionRef);
+    } else {
+      // Change route, the ref scroll logic will be handled when the component loads
+      window.location.href = `${path}?scrollTo=${sectionRef.current?.id}`;
+    }
+  };
+
   return (
     <div className={styles.navbar}>
-      <img className={styles.logoFeelioIcon1} alt="logo Feelio" src="/logo-feelio@2x.png" />
+      <Link to="/">
+        <img className={styles.logoFeelioIcon1} alt="logo Feelio" src="/logo-feelio@2x.png" />
+      </Link>
       <div className={styles.sectionParent}>
-      <a
+        <a
           href="#problematique"
           className={styles.section}
           onClick={(e) => {
-            e.preventDefault(); // Empêche le comportement par défaut du lien
-            scrollToSection(problematiqueRef); // Active le défilement en douceur
+            e.preventDefault();
+            handleNavigation(problematiqueRef, '/');
           }}
         >
           Problématique
@@ -39,7 +51,7 @@ const Navbar: React.FC<NavbarProps> = ({ problematiqueRef, solutionRef, faqRef }
           className={styles.section}
           onClick={(e) => {
             e.preventDefault();
-            scrollToSection(solutionRef);
+            handleNavigation(solutionRef, '/');
           }}
         >
           Solution
@@ -49,11 +61,12 @@ const Navbar: React.FC<NavbarProps> = ({ problematiqueRef, solutionRef, faqRef }
           className={styles.section}
           onClick={(e) => {
             e.preventDefault();
-            scrollToSection(faqRef);
+            handleNavigation(faqRef, '/');
           }}
         >
           F.A.Q
         </a>
+
       </div>
       <div className={styles.burgerMenu} onClick={toggleMenu}>
         ☰
@@ -64,37 +77,37 @@ const Navbar: React.FC<NavbarProps> = ({ problematiqueRef, solutionRef, faqRef }
           <div className={styles.closeMenu} onClick={toggleMenu}>✕</div>
         </div>
         <div className={styles.burgerMenuLinks}>
-          <a 
+          <a
             href="#problematique"
-            className={styles.section} 
+            className={styles.section}
             onClick={(e) => {
-              e.preventDefault(); // Empêche le comportement par défaut du lien
-              scrollToSection(problematiqueRef); // Active le défilement en douceur
+              e.preventDefault();
+              handleNavigation(problematiqueRef, '/');
             }}
           >
             Problématique
           </a>
           <hr className={styles.separator} />
-          <a 
+          <a
             href="#solution"
-            className={styles.section} 
+            className={styles.section}
             onClick={(e) => {
               e.preventDefault();
-              scrollToSection(solutionRef);
-            }}
-            >
-              Solution
-            </a>
-          <hr className={styles.separator} />
-          <a 
-            href="#faq" 
-            className={styles.section} 
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection(faqRef);
+              handleNavigation(solutionRef, '/');
             }}
           >
-              F.A.Q
+            Solution
+          </a>
+          <hr className={styles.separator} />
+          <a
+            href="#faq"
+            className={styles.section}
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavigation(faqRef, '/');
+            }}
+          >
+            F.A.Q
           </a>
         </div>
       </div>
