@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useTransform, useScroll, useMotionValue } from 'framer-motion';
 import styles from './RunningMan.module.css';
-import skateboardingImage from '../../assets/runningGuy/skateboarding2.png';
+import skateboardingImage from '../../assets/images/skateboarder.webp';
 
 const RunningMan = () => {
     const refGuy = useRef(null);

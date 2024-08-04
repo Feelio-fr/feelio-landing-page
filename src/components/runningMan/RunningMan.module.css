@@ -9,7 +9,7 @@
 }
 
 .skateboardingImage {
-  width: 150px;
+  width: 180px;
   height: auto;
   z-index: 1;
   transform: rotate(3deg);
@@ -40,12 +40,12 @@
 
 @media (max-width: 1024px) {
   .skateboardingImage {
-    width: 110px;
+    width: 150px;
   }
 }
 
 @media (max-width: 600px) {
   .skateboardingImage {
-    width: 80px;
+    width: 110px;
   }
 }
