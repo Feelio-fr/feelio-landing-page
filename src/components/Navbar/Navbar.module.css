@@ -20,6 +20,7 @@
   object-fit: cover;
 }
 
+
 .sectionParent {
   display: flex;
   flex-direction: row;
@@ -84,7 +85,6 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  align-items: flex-start;
   margin-top: 10%;
 }
 
@@ -97,6 +97,11 @@
 }
 
 @media (max-width: 1024px) {
+
+  .navbar{
+    margin-top: 0.2rem;
+  }
+
   .sectionParent {
     display: none;
   }
@@ -107,6 +112,7 @@
 
   .section {
     font-size: larger;
+    text-align: left;
   }
 }
 
@@ -118,5 +124,7 @@
 
   .section {
     font-size: 1.5rem;
+    width: 90vw;
+    height: 4vh;
   }
 }

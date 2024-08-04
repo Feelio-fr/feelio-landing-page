@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
 
 interface FooterProps {
@@ -14,9 +15,24 @@ const Footer: React.FC<FooterProps> = ({ problematiqueRef, solutionRef, faqRef }
     ref.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToTopAndNavigate = (path: string) => {
+    window.location.href = path; // Navigate to the new page
+    window.scrollTo(0, 0); // Scroll to top
+  };
+
+  const handleNavigation = (sectionRef: React.RefObject<HTMLDivElement>, path: string) => {
+    if (location.pathname === path) {
+      scrollToSection(sectionRef);
+    } else {
+      // Change route, the ref scroll logic will be handled when the component loads
+      window.location.href = `${path}?scrollTo=${sectionRef.current?.id}`;
+    }
+  };
+
   return (
     <div className={styles.footer}>
-        <div className={styles.footercontent}>
+      <div className={styles.footerContent}>
+        <div className={styles.footerPageLink}>
         <img
             className={styles.logoFeelioIcon}
             alt="Logo Feelio"
@@ -27,7 +43,7 @@ const Footer: React.FC<FooterProps> = ({ problematiqueRef, solutionRef, faqRef }
           className={styles.section}
           onClick={(e) => {
             e.preventDefault(); // Empêche le comportement par défaut du lien
-            scrollToSection(problematiqueRef); // Active le défilement en douceur
+            handleNavigation(problematiqueRef, '/');
           }}
         >
           Problématique
@@ -37,7 +53,7 @@ const Footer: React.FC<FooterProps> = ({ problematiqueRef, solutionRef, faqRef }
           className={styles.section}
           onClick={(e) => {
             e.preventDefault();
-            scrollToSection(solutionRef);
+            handleNavigation(solutionRef, '/');
           }}
         >
           Solution
@@ -47,13 +63,37 @@ const Footer: React.FC<FooterProps> = ({ problematiqueRef, solutionRef, faqRef }
           className={styles.section}
           onClick={(e) => {
             e.preventDefault();
-            scrollToSection(faqRef);
+            handleNavigation(faqRef, '/');
           }}
         >
           F.A.Q
         </a>
         </div>
-        <p className={styles.copyrightFeelio}>Copyright ©Feelio {currentYear} </p>
+
+        <div className={styles.legalContent}>
+          <a
+              href="/mentions-legales"
+              className={styles.sectionLegal}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToTopAndNavigate('/mentions-legales');
+              }}
+            >
+              Mentions légales
+          </a>
+          <a
+            href="/politique-de-confidentialite"
+            className={styles.sectionLegal}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToTopAndNavigate('/politique-de-confidentialite');
+            }}
+          >
+            Politique de confidentialité
+          </a>
+        </div>
+      </div>
+      <p className={styles.copyrightFeelio}>Copyright ©Feelio {currentYear} </p>
     </div>
   );
 };
