@@ -23,9 +23,9 @@ const RunningMan = () => {
     const scrollTransformX = useTransform(scrollYProgress, [0, 1], [windowSize , -200 ]);
     const scrollTransformY = useTransform(scrollYProgress, [0, 1], [70, 0]);
 
-    const windLine1Opacity = useTransform(scrollYProgress, [0, 0.45, 0.50, 0.55, 1], [0, 0, 1, 0, 0]);
-    const windLine2Opacity = useTransform(scrollYProgress, [0, 0.47, 0.52, 0.57, 1], [0, 0, 1, 0, 0]);
-    const windLine3Opacity = useTransform(scrollYProgress, [0, 0.49, 0.54, 0.59, 1], [0, 0, 1, 0, 0]);
+    const windLine1Opacity = useTransform(scrollProgress, [0, 0.43, 0.50, 0.57, 1], [0, 0, 1, 0, 0]);
+    const windLine2Opacity = useTransform(scrollProgress, [0, 0.45, 0.52, 0.59, 1], [0, 0, 1, 0, 0]);
+    const windLine3Opacity = useTransform(scrollProgress, [0, 0.47, 0.54, 0.61, 1], [0, 0, 1, 0, 0]);
 
     return (
         <motion.div
