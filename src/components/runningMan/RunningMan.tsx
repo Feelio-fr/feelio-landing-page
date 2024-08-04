@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { motion, useTransform, useScroll } from 'framer-motion';
+import { motion, useTransform, useScroll, useMotionValue } from 'framer-motion';
 import styles from './RunningMan.module.css';
 import skateboardingImage from '../../assets/runningGuy/skateboarding2.png';
 
@@ -10,18 +10,28 @@ const RunningMan = () => {
     });
 
     const [windowSize, setWindowSize] = useState(window.innerWidth);
+    const scrollProgress = useMotionValue(1);
 
     const handleResize = () => {
-        setWindowSize(window.innerWidth)
+        setWindowSize(window.innerWidth);
     }
 
     useEffect(() => {
-        window.addEventListener('resize', handleResize)
-        return () => window.removeEventListener('resize', handleResize)
-    }, [])
-    
-    const scrollTransformX = useTransform(scrollYProgress, [0, 1], [windowSize , -200 ]);
-    const scrollTransformY = useTransform(scrollYProgress, [0, 1], [70, 0]);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    useEffect(() => {
+        const unsubscribe = scrollYProgress.onChange((value) => {
+            if (value <= scrollProgress.get()) {
+                scrollProgress.set(value);
+            }
+        });
+        return () => unsubscribe();
+    }, [scrollYProgress, scrollProgress]);
+
+    const scrollTransformX = useTransform(scrollProgress, [0, 1], [windowSize, -200]);
+    const scrollTransformY = useTransform(scrollProgress, [0, 1], [70, 0]);
 
     const windLine1Opacity = useTransform(scrollProgress, [0, 0.43, 0.50, 0.57, 1], [0, 0, 1, 0, 0]);
     const windLine2Opacity = useTransform(scrollProgress, [0, 0.45, 0.52, 0.59, 1], [0, 0, 1, 0, 0]);
