@@ -23,14 +23,14 @@ const RunningMan = () => {
 
     useEffect(() => {
         const unsubscribe = scrollYProgress.onChange((value) => {
-            if (value <= scrollProgress.get()) {
+            // if (value <= scrollProgress.get()) {
                 scrollProgress.set(value);
-            }
+            // }
         });
         return () => unsubscribe();
     }, [scrollYProgress, scrollProgress]);
 
-    const scrollTransformX = useTransform(scrollProgress, [0, 1], [windowSize, -200]);
+    const scrollTransformX = useTransform(scrollProgress, [0, 1], [windowSize, -250]);
     const scrollTransformY = useTransform(scrollProgress, [0, 1], [70, 0]);
 
     const windLine1Opacity = useTransform(scrollProgress, [0, 0.43, 0.50, 0.57, 1], [0, 0, 1, 0, 0]);
