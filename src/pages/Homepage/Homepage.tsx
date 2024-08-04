@@ -1,14 +1,14 @@
 // DesktopFinalVersion.tsx
 import { FunctionComponent, useRef } from "react";
-import LastCTA from "../components/lastCTA/LastCTA";
-import ProblemComponent from "../components/Problem/problemComponent";
-import Button from "../components/Button/Button";
-import styles from "./DesktopFinalVersion.module.css";
-import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Footer/Footer";
-import Step from "../components/Step/Step";
-import FAQItem from "../components/Question/Question";
-import RunningMan from "../components/runningMan/RunningMan";
+import LastCTA from "../../components/lastCTA/LastCTA";
+import ProblemComponent from "../../components/Problem/problemComponent";
+import Button from "../../components/Button/Button";
+import styles from "./Homepage.module.css";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
+import Step from "../../components/Step/Step";
+import FAQItem from "../../components/Question/Question";
+import RunningMan from "../../components/runningMan/RunningMan";
 import { motion, Variants } from "framer-motion";
 
 const DesktopFinalVersion: FunctionComponent = () => {
@@ -201,7 +201,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
             className={styles.step}
             sportsGymnastics="/sentiment-very-satisfied.svg"
             stepTitle="Profiter des séances 100% personnalisées"
-            stepDesc="Vous pouvez réaliser des séances quotidiennes et des séances avant et après votre entainement sportif."
+            stepDesc="Vous pouvez réaliser des séances quotidiennes et des séances avant et après votre entaînement sportif."
             isLast={true}
             alt="Quelqu'un qui sourit"
           />
@@ -216,19 +216,19 @@ const DesktopFinalVersion: FunctionComponent = () => {
         />
         <FAQItem
           question="Quels types d'exercices sont inclus dans les séances Feelio&nbsp;?"
-          answer="Les séances Feelio incluent une variété d'exercices allant du renforcement musculaire à la flexibilité, en passant par des exercices de récupération et de prévention des blessures."
+          answer="Les séances Feelio incluent une variété d'exercices allant du renforcement musculaire au travail de mobilité, en passant par des exercices de récupération et de prévention des blessures."
         />
         <FAQItem
           question="Puis-je utiliser Feelio en complément d'un autre programme d'entraînement&nbsp;?"
           answer="Absolument. Feelio peut compléter votre programme d'entraînement actuel en vous offrant des séances de récupération et des exercices spécifiques pour améliorer vos performances et prévenir les blessures."
         />
         <FAQItem
-          question="Quels types d'exercices sont inclus dans les séances Feelio&nbsp;?"
-          answer="Les séances Feelio incluent une variété d'exercices allant du renforcement musculaire à la flexibilité, en passant par des exercices de récupération et de prévention des blessures."
+          question="Les séances Feelio sont elles validées par des experts de la santé&nbsp;?"
+          answer="Feelio collabore étroitement avec des professionnels de la santé pour garantir que chaque séance d'entraînement est sûre et efficace. Nos algorithmes et exercices sont validés par des experts en médecine du sport pour vous offrir un accompagnement sportif de la plus haute qualité."
         />
         <FAQItem
-          question="Quels types d'exercices sont inclus dans les séances Feelio&nbsp;?"
-          answer="Les séances Feelio incluent une variété d'exercices allant du renforcement musculaire à la flexibilité, en passant par des exercices de récupération et de prévention des blessures."
+          question="Combien de temps durent les séances Feelio&nbsp;?"
+          answer="Feelio propose des séances de différentes durées pour s’adapter à votre emploi du temps. Vous pouvez choisir des séances courtes de quelques minutes ou des sessions plus longues selon vos disponibilités et vos objectifs."
         />
         <FAQItem
           question="Quels équipements sont nécessaires pour suivre les séances Feelio&nbsp;?"

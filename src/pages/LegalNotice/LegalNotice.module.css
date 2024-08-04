@@ -1,0 +1,75 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: var(--font-montserrat);
+    background-color: var(--white);
+}
+
+.legalNoticeContent{
+    padding-left: 6%;
+    padding-right: 6%;  
+    padding-bottom: 6%;
+}
+
+.title{
+    font-size: 3.65rem;
+    font-weight: 600;
+    margin: 40px 0 20px 0;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.subtitle{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 20px 0 80px 0;
+    text-align: center;
+}
+
+.paragraphTitle{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 20px 0 20px 0;
+}
+
+/* Responsive design for tablets */
+@media (max-width: 1250px) {
+    .title{
+        font-size: 2.8rem;
+        text-align: center;
+    }
+
+    .subtitle{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .paragraphTitle{
+        font-size: 1.5rem;
+    }
+}
+
+/* Responsive design for phones */
+@media (max-width: 700px) {
+    .title{
+        font-size: 2.1rem;
+        text-align: center;
+    }
+
+    .subtitle{
+        font-size: 1.25rem;
+        text-align: center;
+        margin: 20px 0 40px 0;
+    }
+
+    .paragraphTitle{
+        font-size: 1rem;
+    }
+
+    .paragraphText{
+        font-size: 0.875rem;
+    }
+
+}
