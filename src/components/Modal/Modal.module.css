@@ -24,6 +24,7 @@
 .modalContent {
   background: var(--white);
   width: 43.75rem;
+  margin: 10px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -39,6 +40,7 @@
   font-size: 1.5rem;
   background-color: var(--white);
   z-index: 1;
+  border-radius: 0 8px 0 0;
 }
 
 .imageContainer {
@@ -50,6 +52,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 8px 8px 0 0;
 }
 
 .imageOverlay {
@@ -145,10 +148,6 @@
 @media (max-width: 600px) {
   .overlayTitle {
     margin-top: 1.5rem;
-  }
-
-  .closeButton{
-    max-width: 30px;
   }
 
   .inputContainer {
