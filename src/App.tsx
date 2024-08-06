@@ -5,9 +5,13 @@ import Modal from "./components/Modal/Modal";
 import LegalNotice from "./pages/LegalNotice/LegalNotice"; 
 import  PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 import { Routes, Route } from "react-router-dom";
+import Alert from '@mui/material/Alert';
+import Snackbar from '@mui/material/Snackbar';
 
 function App() {
   const location = useLocation();
+  const [alertInfo, setAlertInfo] = useState<AlertInfo>({ type: "", message: "" });
+  const [loading, setLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
@@ -27,6 +31,19 @@ function App() {
     window.history.replaceState({}, '', `${location.pathname}?${searchParams.toString()}`);
   };
 
+  const handleSuccess = (message: string) => {
+    setAlertInfo({ Severity.Success, message });
+    closeModal();
+  };
+
+  const handleError = (message: string) => {
+    closeModal();
+  };
+
+  const handleCloseAlert = () => {
+    setAlertInfo({ type: "", message: "" });
+  };
+
   return (
     <>
       <Routes>
@@ -34,9 +51,15 @@ function App() {
         <Route path="/mentions-legales" element={<LegalNotice />} />
         <Route path="/politique-de-confidentialite" element={<PrivacyPolicy />} />
       </Routes>
-      <Modal isOpen={isModalOpen} onClose={closeModal} />
+      <Modal isOpen={isModalOpen} onClose={closeModal} handleSuccess={handleSuccess} handleError={handleError} setLoading={setLoading} />
+      <Snackbar open={!!alertInfo.message} autoHideDuration={6000} onClose={handleCloseAlert}>
+        <Alert onClose={handleCloseAlert} severity={alertInfo.type} sx={{ width: '100%' }}>
+          {alertInfo.message}
+        </Alert>
+      </Snackbar>
     </>
   );
+
 }
 
 export default App;

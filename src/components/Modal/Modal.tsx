@@ -4,9 +4,12 @@ import styles from "./Modal.module.css";
 type ModalProps = {
   isOpen: boolean;
   onClose: () => void;
+  handleSuccess: (message: string) => void;
+  handleError: (message: string) => void;
+  setLoading: (loading: boolean) => void;
 };
 
-const Modal: FunctionComponent<ModalProps> = ({ isOpen, onClose }) => {
+const Modal: FunctionComponent<ModalProps> = ({ isOpen, onClose, handleSuccess, handleError, setLoading }) => {
   const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [isFirstNameFocused, setIsFirstNameFocused] = useState(false);
@@ -32,6 +35,29 @@ const Modal: FunctionComponent<ModalProps> = ({ isOpen, onClose }) => {
       onClose();
     }
   };
+
+  const handleSubmit = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch('https://ru5hqfk2eg.execute-api.eu-west-3.amazonaws.com/prod/signup-waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, firstName })
+      });
+      const data = await response.json();
+      if (response.ok) {
+        handleSuccess(data.message);
+      } else {
+        handleError("Une erreur est survenue");
+        throw new Error(data.message || 'Une erreur est survenue');
+      }
+    } catch (error : any) {
+      handleError(error.message); 
+    } finally {
+      setLoading(false);
+    }
+  };
+
 
   return (
     <div className={styles.modalOverlay} onClick={handleOverlayClick}>
@@ -75,7 +101,7 @@ const Modal: FunctionComponent<ModalProps> = ({ isOpen, onClose }) => {
             <label className={`${styles.label} ${(isEmailFocused || email) ? styles.labelFilled : ''}`}>Adresse mail</label>
           </div>
         </div>
-        <button className={styles.modalButton} onClick={onClose}>
+        <button className={styles.modalButton} onClick={handleSubmit}>
           Je m'inscris
         </button>
       </div>
