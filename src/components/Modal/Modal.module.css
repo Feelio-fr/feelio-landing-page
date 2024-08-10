@@ -139,10 +139,18 @@
   font-size: var(--font-size-5xl);
   color: var(--black-v2);
   font-family: var(--font-monsterrat);
+  font-weight: 500;
   border: none;
-  cursor: pointer;
   width: 40%;
   margin-bottom: 1.5rem;
+}
+
+.modalButton:hover {
+  background-color: var(--primary-hover);
+}
+
+.modalButton:active {
+  background-color: var(--primary-click);
 }
 
 @media (max-width: 600px) {
