@@ -10,7 +10,8 @@ const RunningMan = () => {
     });
 
     const [windowSize, setWindowSize] = useState(window.innerWidth);
-    const scrollProgress = useMotionValue(1);
+    const animationProgress = useMotionValue(1);
+    const [animationFinished, setAnimationFinished] = useState(false);
 
     const handleResize = () => {
         setWindowSize(window.innerWidth);
@@ -23,19 +24,35 @@ const RunningMan = () => {
 
     useEffect(() => {
         const unsubscribe = scrollYProgress.onChange((value) => {
-            if (value <= scrollProgress.get()) {
-                scrollProgress.set(value);
+            if (value == 1) {
+                setAnimationFinished(false);
+                return;
+            }
+            if (value <= animationProgress.get() && !animationFinished) {
+                animationProgress.set(value);
+                return;
             }
         });
         return () => unsubscribe();
-    }, [scrollYProgress, scrollProgress]);
+    }, [scrollYProgress, animationProgress, animationFinished]);
 
-    const scrollTransformX = useTransform(scrollProgress, [0, 1], [windowSize, -250]);
-    const scrollTransformY = useTransform(scrollProgress, [0, 1], [70, 0]);
+    useEffect(() => {
+        const unsubscribe = animationProgress.onChange(value => {
+            if (value == 0) { // Reset the animation to the beginning
+                animationProgress.set(1);
+                setAnimationFinished(true);
+                return;
+            }
+        });
+        return () => unsubscribe();
+    }, [animationProgress]);
 
-    const windLine1Opacity = useTransform(scrollProgress, [0, 0.43, 0.50, 0.57, 1], [0, 0, 1, 0, 0]);
-    const windLine2Opacity = useTransform(scrollProgress, [0, 0.45, 0.52, 0.59, 1], [0, 0, 1, 0, 0]);
-    const windLine3Opacity = useTransform(scrollProgress, [0, 0.47, 0.54, 0.61, 1], [0, 0, 1, 0, 0]);
+    const scrollTransformX = useTransform(animationProgress, [0, 1], [windowSize, -250]);
+    const scrollTransformY = useTransform(animationProgress, [0, 1], [70, 0]);
+
+    const windLine1Opacity = useTransform(animationProgress, [0, 0.43, 0.50, 0.57, 1], [0, 0, 1, 0, 0]);
+    const windLine2Opacity = useTransform(animationProgress, [0, 0.45, 0.52, 0.59, 1], [0, 0, 1, 0, 0]);
+    const windLine3Opacity = useTransform(animationProgress, [0, 0.47, 0.54, 0.61, 1], [0, 0, 1, 0, 0]);
 
     return (
         <motion.div
