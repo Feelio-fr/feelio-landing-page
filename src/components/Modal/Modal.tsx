@@ -6,14 +6,14 @@ type ModalProps = {
   onClose: () => void;
   handleSuccess: (message: string) => void;
   handleError: (message: string) => void;
-  setLoading: (loading: boolean) => void;
 };
 
-const Modal: FunctionComponent<ModalProps> = ({ isOpen, onClose, handleSuccess, handleError, setLoading }) => {
+const Modal: FunctionComponent<ModalProps> = ({ isOpen, onClose, handleSuccess, handleError }) => {
   const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [isFirstNameFocused, setIsFirstNameFocused] = useState(false);
   const [isEmailFocused, setIsEmailFocused] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
@@ -131,7 +131,7 @@ const Modal: FunctionComponent<ModalProps> = ({ isOpen, onClose, handleSuccess, 
             <label className={`${styles.label} ${(isEmailFocused || email) ? styles.labelFilled : ''}`}>Adresse mail</label>
           </div>
         </div>
-        <button className={styles.modalButton} onClick={handleSubmit}>
+        <button className={styles.modalButton} onClick={handleSubmit} disabled={loading} style={{ opacity: loading ? 0.5 : 1, cursor: loading ? 'not-allowed' : 'pointer' }}>
           Je m'inscris
         </button>
       </div>

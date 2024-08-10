@@ -34,7 +34,6 @@ const Button: FunctionComponent<ButtonType> = ({
   };
 
   const [alertInfo, setAlertInfo] = useState<AlertInfo>({ type: undefined, message: "" });
-  const [loading, setLoading] = useState(false);
 
   const closeModal = () => {
     setModalOpen(false);
@@ -64,7 +63,7 @@ const Button: FunctionComponent<ButtonType> = ({
         {buttonText && <div className={styles.buttonText}>{buttonText}</div>}
         {icon && <img className={styles.icon} alt="Button icon" src={icon} />}
       </div>
-      <Modal isOpen={isModalOpen} onClose={closeModal} handleSuccess={handleSuccess} handleError={handleError} setLoading={setLoading} />
+      <Modal isOpen={isModalOpen} onClose={closeModal} handleSuccess={handleSuccess} handleError={handleError} />
       <Snackbar open={!!alertInfo.message} autoHideDuration={6000} onClose={handleCloseAlert}>
         <Alert onClose={handleCloseAlert} severity={alertInfo.type} sx={{ width: '100%' }}>
           {alertInfo.message}

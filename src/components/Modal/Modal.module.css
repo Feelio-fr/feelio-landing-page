@@ -141,7 +141,6 @@
   font-family: var(--font-monsterrat);
   font-weight: 500;
   border: none;
-  cursor: pointer;
   width: 40%;
   margin-bottom: 1.5rem;
 }
