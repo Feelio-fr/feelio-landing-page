@@ -1,19 +1,24 @@
 import { FunctionComponent, useEffect, useState } from "react";
 import styles from "./Modal.module.css";
+import Snackbar from "@mui/material/Snackbar/Snackbar";
+import Alert from "@mui/material/Alert/Alert";
+import { AlertInfo, Severity } from "../../types/Alert";
+
 
 type ModalProps = {
   isOpen: boolean;
   onClose: () => void;
   handleSuccess: (message: string) => void;
-  handleError: (message: string) => void;
 };
 
-const Modal: FunctionComponent<ModalProps> = ({ isOpen, onClose, handleSuccess, handleError }) => {
+const Modal: FunctionComponent<ModalProps> = ({ isOpen, onClose, handleSuccess }) => {
   const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [isFirstNameFocused, setIsFirstNameFocused] = useState(false);
   const [isEmailFocused, setIsEmailFocused] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [alertInfo, setAlertInfo] = useState<AlertInfo>({ type: undefined, message: "" });
+
 
   useEffect(() => {
     if (isOpen) {
@@ -36,6 +41,14 @@ const Modal: FunctionComponent<ModalProps> = ({ isOpen, onClose, handleSuccess, 
     }
   };
 
+  const handleError = (message: string) => {
+    setAlertInfo({ type: Severity.Error, message });
+  };
+
+  const handleCloseAlert = () => {
+    setAlertInfo({ type: undefined, message: "" });
+  };
+
   const isValidEmail = (email: string): boolean => {
     const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return re.test(email);
@@ -50,15 +63,27 @@ const Modal: FunctionComponent<ModalProps> = ({ isOpen, onClose, handleSuccess, 
     setLoading(true);
     const errorMessage = "Une erreur est survenue. Veuillez réessayer plus tard."
 
-    // Check format firstname and email
-    if(!isValidEmail(email) || !isValidName(firstName)) {
-      handleError("Prénom ou Adresse mail invalide.");
+    if(!isValidEmail(email) && !isValidName(firstName)) {
+      handleError("Prénom et adresse mail invalides.");
+      setLoading(false);
+      return;
+    }
+
+    if(!isValidEmail(email)) {
+      handleError("Adresse mail invalide.");
+      setLoading(false);
+      return;
+    }
+
+    if(!isValidName(firstName)) {
+      handleError("Prénom invalide.");
       setLoading(false);
       return;
     }
 
     const apiUrl: string = process.env.REACT_APP_API_URL_PROD
     const apiKey: string = process.env.REACT_APP_API_KEY_PROD
+
     if(!apiUrl || !apiKey) {
       handleError(errorMessage);
       setLoading(false);
@@ -75,7 +100,7 @@ const Modal: FunctionComponent<ModalProps> = ({ isOpen, onClose, handleSuccess, 
         body: JSON.stringify({ email, firstName })
       });
       if (response.ok) {
-        handleSuccess("Inscription validée à la waitlist !");
+        handleSuccess("Inscription à la waitlist validée !");
       } else {
         handleError(errorMessage);
         throw new Error(errorMessage);
@@ -134,6 +159,18 @@ const Modal: FunctionComponent<ModalProps> = ({ isOpen, onClose, handleSuccess, 
         <button className={styles.modalButton} onClick={handleSubmit} disabled={loading} style={{ opacity: loading ? 0.5 : 1, cursor: loading ? 'not-allowed' : 'pointer' }}>
           Je m'inscris
         </button>
+
+        <Snackbar 
+          open={!!alertInfo.message} 
+          autoHideDuration={6000} 
+          onClose={handleCloseAlert}
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+          sx={{ width: '96%' }}
+        >
+          <Alert onClose={handleCloseAlert} severity={alertInfo.type} sx={{ width: '41.75rem' }}>
+            {alertInfo.message}
+          </Alert>
+        </Snackbar>
       </div>
     </div>
   );

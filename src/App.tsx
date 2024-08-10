@@ -17,9 +17,7 @@ function App() {
 
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
-    console.log("searchParams", searchParams);
     if (searchParams.has("registration")) {
-      console.log("registration parameter detected");
       setIsModalOpen(true);
     }
   }, [location]);
@@ -53,7 +51,7 @@ function App() {
         <Route path="/mentions-legales" element={<LegalNotice />} />
         <Route path="/politique-de-confidentialite" element={<PrivacyPolicy />} />
       </Routes>
-      <Modal isOpen={isModalOpen} onClose={closeModal} handleSuccess={handleSuccess} handleError={handleError} />
+      <Modal isOpen={isModalOpen} onClose={closeModal} handleSuccess={handleSuccess} />
       <Snackbar open={!!alertInfo.message} autoHideDuration={6000} onClose={handleCloseAlert}>
         <Alert onClose={handleCloseAlert} severity={alertInfo.type} sx={{ width: '100%' }}>
           {alertInfo.message}

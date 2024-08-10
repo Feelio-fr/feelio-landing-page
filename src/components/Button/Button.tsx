@@ -44,10 +44,6 @@ const Button: FunctionComponent<ButtonType> = ({
     closeModal();
   };
 
-  const handleError = (message: string) => {
-    setAlertInfo({ type: Severity.Error, message });
-    closeModal();
-  };
 
   const handleCloseAlert = () => {
     setAlertInfo({ type: undefined, message: "" });
@@ -63,12 +59,18 @@ const Button: FunctionComponent<ButtonType> = ({
         {buttonText && <div className={styles.buttonText}>{buttonText}</div>}
         {icon && <img className={styles.icon} alt="Button icon" src={icon} />}
       </div>
-      <Modal isOpen={isModalOpen} onClose={closeModal} handleSuccess={handleSuccess} handleError={handleError} />
-      <Snackbar open={!!alertInfo.message} autoHideDuration={6000} onClose={handleCloseAlert}>
-        <Alert onClose={handleCloseAlert} severity={alertInfo.type} sx={{ width: '100%' }}>
-          {alertInfo.message}
-        </Alert>
-      </Snackbar>
+      <Modal isOpen={isModalOpen} onClose={closeModal} handleSuccess={handleSuccess} />
+      <Snackbar 
+          open={!!alertInfo.message} 
+          autoHideDuration={6000} 
+          onClose={handleCloseAlert}
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+          sx={{ width: '96%' }}
+        >
+          <Alert onClose={handleCloseAlert} severity={alertInfo.type} sx={{ width: '80%' }}>
+            {alertInfo.message}
+          </Alert>
+        </Snackbar>
     </>
   );
 };
