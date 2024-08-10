@@ -28,6 +28,14 @@
   cursor: pointer;
 }
 
+.button:hover {
+  background-color: var(--primary-hover);
+}
+
+.button:active {
+  background-color: var(--primary-click);
+}
+
 @media (max-width: 600px) {
   .buttonText {
     font-size: 18px;
