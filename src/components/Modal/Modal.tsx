@@ -57,8 +57,8 @@ const Modal: FunctionComponent<ModalProps> = ({ isOpen, onClose, handleSuccess, 
       return;
     }
 
-    const apiUrl: string = process.env.REACT_APP_API_URL_NON_PROD
-    const apiKey: string = process.env.REACT_APP_API_KEY_NON_PROD
+    const apiUrl: string = process.env.REACT_APP_API_URL_PROD
+    const apiKey: string = process.env.REACT_APP_API_KEY_PROD
     if(!apiUrl || !apiKey) {
       handleError(errorMessage);
       setLoading(false);
@@ -81,6 +81,7 @@ const Modal: FunctionComponent<ModalProps> = ({ isOpen, onClose, handleSuccess, 
         throw new Error(errorMessage);
       }
     } catch (error : any) {
+      console.log(error)
       handleError(errorMessage); 
     } finally {
       setLoading(false);
