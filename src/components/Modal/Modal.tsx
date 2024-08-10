@@ -36,23 +36,52 @@ const Modal: FunctionComponent<ModalProps> = ({ isOpen, onClose, handleSuccess, 
     }
   };
 
+  const isValidEmail = (email: string): boolean => {
+    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return re.test(email);
+  };
+  
+  const isValidName = (name: string): boolean => {
+    const re = /^[a-zA-Z]+$/;
+    return re.test(name);
+  };
+
   const handleSubmit = async () => {
     setLoading(true);
+    const errorMessage = "Une erreur est survenue. Veuillez réessayer plus tard."
+
+    // Check format firstname and email
+    if(!isValidEmail(email) || !isValidName(firstName)) {
+      handleError("Prénom ou Adresse mail invalide.");
+      setLoading(false);
+      return;
+    }
+
+    const apiUrl: string = process.env.REACT_APP_API_URL_NON_PROD
+    const apiKey: string = process.env.REACT_APP_API_KEY_NON_PROD
+    if(!apiUrl || !apiKey) {
+      handleError(errorMessage);
+      setLoading(false);
+      return;
+    } 
+
     try {
-      const response = await fetch('https://ru5hqfk2eg.execute-api.eu-west-3.amazonaws.com/prod/signup-waitlist', {
+      const response = await fetch(apiUrl, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': apiKey
+        },
         body: JSON.stringify({ email, firstName })
       });
-      const data = await response.json();
       if (response.ok) {
-        handleSuccess(data.message);
+        handleSuccess("Inscription validée à la waitlist !");
       } else {
-        handleError("Une erreur est survenue");
-        throw new Error(data.message || 'Une erreur est survenue');
+        handleError(errorMessage);
+        throw new Error(errorMessage);
       }
     } catch (error : any) {
-      handleError(error.message); 
+      handleError(errorMessage); 
     } finally {
       setLoading(false);
     }

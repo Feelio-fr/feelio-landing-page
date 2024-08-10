@@ -7,10 +7,11 @@ import  PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 import { Routes, Route } from "react-router-dom";
 import Alert from '@mui/material/Alert';
 import Snackbar from '@mui/material/Snackbar';
+import { AlertInfo, Severity } from "./types/Alert";
 
 function App() {
   const location = useLocation();
-  const [alertInfo, setAlertInfo] = useState<AlertInfo>({ type: "", message: "" });
+  const [alertInfo, setAlertInfo] = useState<AlertInfo>({ type: undefined, message: "" });
   const [loading, setLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -32,16 +33,17 @@ function App() {
   };
 
   const handleSuccess = (message: string) => {
-    setAlertInfo({ Severity.Success, message });
+    setAlertInfo({ type: Severity.Success, message });
     closeModal();
   };
 
   const handleError = (message: string) => {
+    setAlertInfo({ type: Severity.Error, message });
     closeModal();
   };
 
   const handleCloseAlert = () => {
-    setAlertInfo({ type: "", message: "" });
+    setAlertInfo({ type: undefined, message: "" });
   };
 
   return (
