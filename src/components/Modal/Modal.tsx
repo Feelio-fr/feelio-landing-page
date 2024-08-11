@@ -81,7 +81,7 @@ const Modal: FunctionComponent<ModalProps> = ({ isOpen, onClose, handleSuccess }
       return;
     }
 
-    const apiUrl: string = process.env.REACT_APP_API_URL_PROD
+    const apiUrl: string = process.env.REACT_APP_API_URL_PROD + "signup-waitlist";
     const apiKey: string = process.env.REACT_APP_API_KEY_PROD
 
     if(!apiUrl || !apiKey) {
