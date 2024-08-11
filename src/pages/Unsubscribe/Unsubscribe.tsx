@@ -9,8 +9,8 @@ const Unsubscribe = () => {
 
   useEffect(() => {
     const unsubscribe = async () => {
-      const apiUrl: string = process.env.REACT_APP_API_URL_NON_PROD + 'unsubscription';
-      const apiKey: string = process.env.REACT_APP_API_KEY_NON_PROD
+      const apiUrl: string = process.env.REACT_APP_API_URL_PROD + 'unsubscription';
+      const apiKey: string = process.env.REACT_APP_API_KEY_PROD
 
       if(!apiUrl || !apiKey) {
         setMessage("Une erreur est survenue. Veuillez nous contacter à l'adresse contact@feelio.fr ou avec la messagerie en bas à droite.");
