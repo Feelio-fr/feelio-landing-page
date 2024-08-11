@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import DesktopFinalVersion from "./pages/Homepage/Homepage";
 import Modal from "./components/Modal/Modal"; 
 import LegalNotice from "./pages/LegalNotice/LegalNotice"; 
@@ -50,6 +50,7 @@ function App() {
         <Route path="/" element={<DesktopFinalVersion />} />
         <Route path="/mentions-legales" element={<LegalNotice />} />
         <Route path="/politique-de-confidentialite" element={<PrivacyPolicy />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       <Modal isOpen={isModalOpen} onClose={closeModal} handleSuccess={handleSuccess} />
       <Snackbar open={!!alertInfo.message} autoHideDuration={6000} onClose={handleCloseAlert}>
