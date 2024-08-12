@@ -193,7 +193,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
             className={styles.step}
             sportsGymnastics="/vector.svg"
             stepTitle="Je fais mon analyse morpho-anatomique"
-            stepDesc="J'analyse ma morpho-anatomie avec une intelligence artificelle, en me prenant en vidéo et en réalisant des petits exercices."
+            stepDesc="J'analyse ma morpho-anatomie avec une intelligence artificielle, en me prenant en vidéo et en réalisant des petits exercices."
             isMorpho={true}
             alt="Analyse d'un individu"
           />
