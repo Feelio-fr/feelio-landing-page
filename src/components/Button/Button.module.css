@@ -12,6 +12,8 @@
 }
 
 .button {
+  position: relative;
+  overflow: hidden;
   border-radius: var(--br-xl);
   background-color: var(--primary);
   max-width: 100%;
@@ -26,6 +28,30 @@
   color: var(--black-v2);
   font-family: var(--font-monsterrat);
   cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  box-shadow: 0 0 15px 5px rgba(119, 209, 78, 0.5);
+}
+
+.button::before,
+.button::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(45deg);
+  transition: transform 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+.button::before {
+  animation: diagonal-stripes 6s infinite;
+}
+
+.button::after {
+  animation: diagonal-stripes 6s infinite 3s;
 }
 
 .button:hover {
@@ -35,6 +61,32 @@
 .button:active {
   background-color: var(--primary-click);
 }
+
+@keyframes diagonal-stripes {
+  0% {
+    top: -100%;
+    left: -100%;
+  }
+  25% {
+    top: 50%;
+    left: 50%;
+  }
+  50% {
+    top: 200%;
+    left: 200%;
+  }
+  100% {
+    top: 200%;
+    left: 200%;
+  }
+}
+
+.button:hover::before,
+.button:hover::after {
+  background: rgba(255, 255, 255, 0.4); /* Make the stripes more visible on hover */
+}
+
+
 
 @media (max-width: 600px) {
   .buttonText {

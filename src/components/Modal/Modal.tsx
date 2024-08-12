@@ -50,14 +50,15 @@ const Modal: FunctionComponent<ModalProps> = ({ isOpen, onClose, handleSuccess }
   };
 
   const isValidEmail = (email: string): boolean => {
-    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const re = /^[a-zA-Z0-9._%+-À-ÿ]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return re.test(email);
-  };
+  };  
   
   const isValidName = (name: string): boolean => {
-    const re = /^[a-zA-Z]+$/;
+    const re = /^[a-zA-ZÀ-ÿ\-]+$/;
     return re.test(name);
   };
+
 
   const handleSubmit = async () => {
     setLoading(true);
