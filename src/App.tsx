@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { Navigate, useLocation } from "react-router-dom";
 import DesktopFinalVersion from "./pages/Homepage/Homepage";
 import Modal from "./components/Modal/Modal"; 
 import LegalNotice from "./pages/LegalNotice/LegalNotice"; 
@@ -8,6 +8,7 @@ import { Routes, Route } from "react-router-dom";
 import Alert from '@mui/material/Alert';
 import Snackbar from '@mui/material/Snackbar';
 import { AlertInfo, Severity } from "./types/Alert";
+import Unsubscribe from "./pages/Unsubscribe/Unsubscribe";
 
 function App() {
   const location = useLocation();
@@ -48,8 +49,10 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<DesktopFinalVersion />} />
-        <Route path="/mentions-legales" element={<LegalNotice />} />
+        <Route path="/mentions-legales" element={<LegalNotice />} />        
         <Route path="/politique-de-confidentialite" element={<PrivacyPolicy />} />
+        <Route path="/desinscription/:token" element={<Unsubscribe />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       <Modal isOpen={isModalOpen} onClose={closeModal} handleSuccess={handleSuccess} />
       <Snackbar open={!!alertInfo.message} autoHideDuration={6000} onClose={handleCloseAlert}>
