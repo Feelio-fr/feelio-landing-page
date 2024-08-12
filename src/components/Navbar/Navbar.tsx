@@ -44,7 +44,7 @@ const Navbar: React.FC<NavbarProps> = ({ problematiqueRef, solutionRef, faqRef }
             handleNavigation(problematiqueRef, '/');
           }}
         >
-          Problématique
+          Problématiques
         </a>
         <a
           href="#solution"
@@ -85,7 +85,7 @@ const Navbar: React.FC<NavbarProps> = ({ problematiqueRef, solutionRef, faqRef }
               handleNavigation(problematiqueRef, '/');
             }}
           >
-            Problématique
+            Problématiques
           </a>
           <hr className={styles.separator} />
           <a

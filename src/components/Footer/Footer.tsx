@@ -48,7 +48,7 @@ const Footer: React.FC<FooterProps> = ({ problematiqueRef, solutionRef, faqRef }
             handleNavigation(problematiqueRef, '/');
           }}
         >
-          Problématique
+          Problématiques
         </a>
         <a
           href="#solution"

@@ -113,7 +113,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
       <div id="problematique" ref={problematiqueRef} className={styles.secondPageBackground}>
         <div className={styles.secondpagecontent}>
           <div className={styles.titleContainer}>
-            <h2 className={styles.title}>Problématique</h2>
+            <h2 className={styles.title}>Problématiques</h2>
             <h3 className={styles.subtitles}>
               <span>La </span>
               <i className={styles.boldText}>pratique sportive</i>
@@ -185,23 +185,23 @@ const DesktopFinalVersion: FunctionComponent = () => {
           <Step
             className={styles.step}
             sportsGymnastics="/sports-gymnastics.svg"
-            stepTitle="Renseigner son profil utilisateur"
-            stepDesc="Indiquez vos informations personnelles sur votre mode de vie et vos habitudes sportives."
+            stepTitle="Je renseigne mon profil utilisateur"
+            stepDesc="J'indique mes informations personnelles sur mon mode de vie et mes habitudes sportives."
             alt="Quelqu'un qui fait du sport"
           />
           <Step
             className={styles.step}
             sportsGymnastics="/vector.svg"
-            stepTitle="Faire son analyse morpho-anatomique"
-            stepDesc="Avec une Intelligence Artificielle et plusieurs exercices nous analysons votre morpho-anatomie complète."
+            stepTitle="Je fais mon analyse morpho-anatomique"
+            stepDesc="J'analyse ma morpho-anatomie avec une intelligence artificelle, en me prenant en vidéo et en réalisant des petits exercices."
             isMorpho={true}
             alt="Analyse d'un individu"
           />
           <Step
             className={styles.step}
             sportsGymnastics="/sentiment-very-satisfied.svg"
-            stepTitle="Profiter des séances 100% personnalisées"
-            stepDesc="Vous pouvez réaliser des séances quotidiennes et des séances avant et après votre entaînement sportif."
+            stepTitle="Je profite des séances 100% personnalisées"
+            stepDesc="Je peux réaliser des séances quotidiennes et des séances avant et après mon entaînement sportif."
             isLast={true}
             alt="Quelqu'un qui sourit"
           />
@@ -223,16 +223,16 @@ const DesktopFinalVersion: FunctionComponent = () => {
           answer="Absolument. Feelio peut compléter votre programme d'entraînement actuel en vous offrant des séances de récupération et des exercices spécifiques pour améliorer vos performances et prévenir les blessures."
         />
         <FAQItem
+          question="Est-ce que Feelio est une application médicale&nbsp;?"
+          answer="Non, Feelio n'est pas une application médicale. Nos programmes d'entraînement sont conçus pour améliorer votre performance et votre bien-être, mais ils ne remplacent en aucun cas les conseils et traitements fournis par des professionnels de la santé."
+          />
+        <FAQItem
           question="Les séances Feelio sont elles validées par des experts de la santé&nbsp;?"
           answer="Feelio collabore étroitement avec des professionnels de la santé pour garantir que chaque séance d'entraînement est sûre et efficace. Nos algorithmes et exercices sont validés par des experts en médecine du sport pour vous offrir un accompagnement sportif de la plus haute qualité."
         />
         <FAQItem
-          question="Combien de temps durent les séances Feelio&nbsp;?"
-          answer="Feelio propose des séances de différentes durées pour s’adapter à votre emploi du temps. Vous pouvez choisir des séances courtes de quelques minutes ou des sessions plus longues selon vos disponibilités et vos objectifs."
-        />
-        <FAQItem
-          question="Quels équipements sont nécessaires pour suivre les séances Feelio&nbsp;?"
-          answer="Feelio est très flexible. Vous pouvez indiquer le matériel que vous avez à disposition, et nos séances s'adapteront en conséquence. De plus, de nombreux exercices peuvent être réalisés sans aucun équipement, vous permettant de vous entraîner où que vous soyez."
+          question="Est-ce que mes vidéos et images sont stockées lors de l'analyse morpho-anatomique&nbsp;?"
+          answer="Non, Feelio ne stocke aucune image ni vidéo de votre analyse morpho-anatomique. L'analyse vidéo est effectuée en temps réel pour déterminer vos proportions corporelles en utilisant des points clés tel que les poignets, les genoux, les coudes, les épaules, les chevilles, et autre."
         />
       </div>
 
