@@ -1,0 +1,15 @@
+.unsubscribePage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 6%;
+    font-family: var(--font-montserrat);
+    background-color: var(--white);
+}
+  
+.unsubscribePage p {
+    font-size: 1.5rem;
+    color: var(--black-v2);
+    text-align: center;
+}
