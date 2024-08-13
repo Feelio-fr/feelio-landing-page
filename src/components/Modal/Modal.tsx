@@ -101,7 +101,7 @@ const Modal: FunctionComponent<ModalProps> = ({ isOpen, onClose, handleSuccess }
         body: JSON.stringify({ email, firstName })
       });
       if (response.ok) {
-        handleSuccess("Inscription à la waitlist validée !");
+        handleSuccess("Inscription à la waitlist validée ! Vous allez recevoir un mail de confirmation (vérifiez vos spams).");
       } else {
         handleError(errorMessage);
         throw new Error(errorMessage);
