@@ -193,7 +193,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
             className={styles.step}
             sportsGymnastics="/vector.svg"
             stepTitle="Je fais mon analyse morpho-anatomique"
-            stepDesc="J'analyse ma morpho-anatomie avec une intelligence artificielle, en me prenant en vidéo et en réalisant de simples exercices."
+            stepDesc="J'analyse ma morpho-anatomie avec une intelligence artificielle, en me prenant en vidéo et en réalisant quelques exercices."
             isMorpho={true}
             alt="Analyse d'un individu"
           />
@@ -201,7 +201,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
             className={styles.step}
             sportsGymnastics="/sentiment-very-satisfied.svg"
             stepTitle="Je profite des séances 100% personnalisées"
-            stepDesc="Je peux réaliser des séances quotidiennes et des séances avant et après mon entaînement sportif."
+            stepDesc="Je peux maintenant réaliser des séances quotidiennes et des séances avant et après mon entaînement sportif."
             isLast={true}
             alt="Quelqu'un qui sourit"
           />
