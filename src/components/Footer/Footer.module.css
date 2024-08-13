@@ -8,21 +8,22 @@
     box-sizing: border-box;
     font-size: var(--font-size-5xl);
     color: var(--white);
+    padding-bottom: 30px;
 }
 
 .footerContent {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin: 50px 10% 20px 10%;
+}
+
+.footerPageLink {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    width: 100vw;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    align-items: flex-end;
-}
-
-.footerPageLink,
-.footerContent {
-    display: flex;
+    gap: 2rem;
 }
 
 .logoFeelioIcon {
@@ -30,10 +31,11 @@
     height: 36.7px;
 }
 
-.footerPageLink {
+.footerSubContent1, .footerSubContent2 {
+    display: flex;
     flex-direction: row;
     align-items: baseline;
-    gap: 3rem;
+    justify-content: space-between;
 }
 
 .section {
@@ -72,6 +74,21 @@
     color: var(--white);
 }
 
+.socialMedia {
+    display: flex;
+    gap: 1rem;
+}
+
+.socialIcon img {
+    width: 24px;
+    height: 24px;
+    filter: invert(1);
+}
+
+.socialIcon:hover img {
+    filter: invert(0.75);
+}
+
 .copyrightFeelio {
     font-size: 1.2rem;
     font-weight: 100;
@@ -88,35 +105,30 @@
 
 /* Responsive design for tablets */
 @media (max-width: 1024px) {
-    .section{
-        display: none;
-    }
-
     .sectionLegal {
         font-size: 0.875rem;
     }
 
+    .footerSubContent1, .footerSubContent2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
 }
   
 /* Responsive design for phones */
 @media (max-width: 600px) {
-    .footer {
-        height: 70px;
-    }
 
     .footerContent {
-        display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 1rem;
         margin-bottom: 20px;
     }
 
     .copyrightFeelio{
         font-size: 0.875rem;
         height: 30px;
-        text-align: center;
 
         border-top: none; 
         padding-top: 0px; 
@@ -133,5 +145,11 @@
         cursor: pointer;
         text-decoration: underline;
         color: var(--white);
+    }
+}
+
+@media (max-width: 400px) {
+    .footerPageLink {
+        display: none;
     }
 }
