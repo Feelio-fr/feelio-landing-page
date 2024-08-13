@@ -82,11 +82,11 @@
 .socialIcon img {
     width: 24px;
     height: 24px;
-    transition: fill 0.3s ease, filter 0.3s ease;
+    filter: invert(1);
 }
 
 .socialIcon:hover img {
-    filter: invert(1);
+    filter: invert(0.75);
 }
 
 .copyrightFeelio {
