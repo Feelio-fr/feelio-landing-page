@@ -212,7 +212,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
         <h2 className={styles.title}>F.A.Q</h2>
         <FAQItem
           question="Est-ce que Feelio convient à tous les niveaux sportifs&nbsp;?"
-          answer="Feelio utilise une intelligence artificielle avancée pour analyser votre morpho-anatomie et vos habitudes sportives. En fonction de ces données, nous vous proposons des séances d'entraînement sur mesure adaptées à vos besoins et objectifs spécifiques."
+          answer="Oui, Feelio convient à tous les niveaux sportifs des débutants aux sportifs plus confirmés. Après avoir analysé votre morphologie et votre niveau de pratique sportive, l'application vous proposera des séances d'entraînement personnalisées, conçues pour répondre à vos besoins spécifiques."
         />
         <FAQItem
           question="Quels types d'exercices sont inclus dans les séances Feelio&nbsp;?"
