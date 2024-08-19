@@ -1,12 +1,10 @@
 :root {
-  --font-size-5xl: 24px; /* Example value, adjust as needed */
   --gap-11xl: 20px; /* Example value, adjust as needed */
   --gap-xl: 10px; /* Example value, adjust as needed */
   --black-v2: #000000; /* Example value, adjust as needed */
   --font-montserrat: 'Montserrat', sans-serif; /* Example value, adjust as needed */
   --br-xl: 10px; /* Example value, adjust as needed */
   --secondary: #00bc85; /* Example value, adjust as needed */
-  --font-size-5xl: 44px;
 }
 
 .firstPage{
@@ -20,7 +18,6 @@
   flex-direction: row;
   align-items: center;
   text-align: left;
-  font-size: 2.75rem; /* 44px */
   gap: 100px;
   min-height: 90vh;
 }
@@ -32,7 +29,6 @@
 .textdescription {
   align-self: stretch;
   gap: 50px;
-  font-size: var(--font-size-5xl);
   color: var(--black-v2);
 }
 
@@ -40,7 +36,6 @@
   width: 100%;
   height: 100%;
   flex: 0 0 54%;
-  max-width: 800px;
 }
 
 
@@ -54,7 +49,6 @@
   margin-bottom: 20px;
   letter-spacing: 0.1px;
   line-height: 110%;
-  font-size: 2.75rem; /* 44px */
 }
 
 .firstPageTitleDifferentColor {
@@ -94,15 +88,17 @@
 .calltoaction {
   align-items: center;
   text-align: center;
-  font-size: 1rem; /* 16px */
 }
 
 /* Big screen Styles */
 @media (min-width: 2000px) {
   .rightSideFirstPageContent {
-    max-width: 40vw;
+    max-width: 1300px;
   }
 
+  .firstpagecontent {
+    justify-content: center;
+  }
 }
 
 /* Tablet Styles */
@@ -135,23 +131,14 @@
     margin-top: 40px;
   }
 
-  .firstPageTitle {
-    font-size: 1.875rem; /* 30px */
-  }
-  
   .firstpagedescription {
     width: 100%;
-    font-size: 1rem; /* 16px */
   }
 
   .rightSideFirstPageContent {
     margin: 0 8% 0 8%;
   }
   
-  .ctasubtitle {
-    font-size: 0.875rem; /* 14px */
-  }
-
   .callToActionButton {
     width: 300px;
     height: 50px;
@@ -189,7 +176,6 @@
 
 
 .subtitles {
-  font-size: 1.75rem; /* Ajustement de la taille de la police */
   margin: 0;
   font-weight: 300;
 }
@@ -228,9 +214,6 @@
 
 /* Responsive design for phones */
 @media (max-width: 700px) {
-  .subtitles {
-    font-size: 1rem; /* 16px */
-  }
 
   .titleContainer{
     padding-top: 5%;
@@ -285,13 +268,9 @@
 }
 
 .solutionDescBold {
-  font-size: 1.5rem; /* Ajustement de la taille de la police */
   font-weight: bold;
 }
 
-.solutionDescClassic {
-  font-size: 1.5rem; /* Ajustement de la taille de la police */
-}
 
 .thirdpagecontent,
 .thirdpagetextcontent {
@@ -304,7 +283,6 @@
   width: 845px;
   align-items: flex-start;
   gap: 14px;
-  font-size: var(--font-size-5xl);
   color: var(--black-v2);
 }
 
@@ -320,12 +298,7 @@
   }
 
   .solutionDescBold {
-    font-size: 1.125rem; 
     width: 100%;
-  }
-  
-  .solutionDescClassic {
-    font-size: 1.125rem;
   }
 }
 
@@ -337,14 +310,6 @@
   .thirdpagetextcontent {
     width: 90%;
     gap: 1.5rem;
-  }
-
-  .solutionDescBold {
-    font-size: 0.95rem; /* Ajustement de la taille de la police */
-  }
-  
-  .solutionDescClassic {
-    font-size: 0.875rem; /* Ajustement de la taille de la police */
   }
 }
 
@@ -434,14 +399,12 @@
 
 /* All titles of section */
 .title {
-  font-size: 3.65rem;
   font-weight: 600;
   margin: 20px 0 80px 0;
 }
 
 .secondpagecontent .title {
   margin: 20px 0 20px 0;
-  font-size: 3.65rem;
   font-weight: 600;
 }
 
@@ -452,24 +415,13 @@
 /* Responsive design for tablets */
 @media (max-width: 1250px) {
   .title{
-    font-size: 2.8rem;
     text-align: center;
-  }
-
-  .secondpagecontent .title {
-    font-size: 2.8rem;
   }
 }
 
 /* Responsive design for phones */
 @media (max-width: 700px) {
   .title {
-    font-size: 2.1rem;
     margin-bottom: 40px;
   }
-
-  .secondpagecontent .title {
-    font-size: 2.1rem;
-  }
-  
 }

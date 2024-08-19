@@ -91,14 +91,12 @@ const DesktopFinalVersion: FunctionComponent = () => {
                   <Button
                     buttonText="Je réserve ma place"
                     icon="/padlock@2x.png"
-                    buttonWidth="350px"
-                    buttonHeight="60px"
                     className={styles.callToActionButton}
                   />
                   <div className={styles.ctasubtitle}>
-                    <p>
+                    <small>
                       Inscription à la file d’attente gratuite en moins d’une minute
-                    </p>
+                    </small>
                   </div>
                 </div>
               </div>

@@ -1,5 +1,4 @@
 :root {
-  --font-size-5xl: 24px; /* Example value, adjust as needed */
   --gap-21xl: 20px; /* Example value, adjust as needed */
   --primary-color: #77D14E;
 }
@@ -9,7 +8,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  font-size: var(--font-size-5xl);
   height: 10vh;
   margin-top: 1rem;
 }
@@ -55,7 +53,6 @@
 
 .burgerMenu {
   display: none;
-  font-size: 30px;
   cursor: pointer;
 }
 
@@ -94,7 +91,6 @@
 }
 
 .closeMenu {
-  font-size: 30px;
   cursor: pointer;
 }
 
@@ -128,7 +124,6 @@
   }
 
   .section {
-    font-size: larger;
     text-align: left;
   }
 }
@@ -140,7 +135,6 @@
   }
 
   .section {
-    font-size: 1.5rem;
     width: 90vw;
     height: 4vh;
   }

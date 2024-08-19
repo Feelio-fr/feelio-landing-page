@@ -12,6 +12,7 @@
   margin: 0;
   line-height: normal;
 }
+
 :root {
   /* fonts */
   --font-montserrat: Montserrat;
@@ -59,4 +60,61 @@
   --br-xl: 20px;
   --br-26xl: 45px;
   --br-31xl: 50px;
+}
+
+/* Large screens */
+@media (min-width: 2500px) {
+  h1 {
+    font-size: 56px; 
+  }
+
+  h2 {
+    font-size: 48px; 
+  }
+
+  h3 {
+    font-size: 40px; 
+  }
+
+  p {
+    font-size: 24px; 
+  }
+}
+
+/* Extra Large screens (4K) */
+@media (min-width: 3840px) {
+  h1 {
+    font-size: 100px; 
+  }
+
+  h2 {
+    font-size: 80px; 
+  }
+
+  h3 {
+    font-size: 65px;
+  }
+
+  p {
+    font-size: 45px; 
+  }
+}
+
+/* Ultra Large screens (8K) */
+@media (min-width: 7680px) {
+  h1 {
+    font-size: 140px; 
+  }
+
+  h2 {
+    font-size: 115px; 
+  }
+
+  h3 {
+    font-size: 100px; 
+  }
+
+  p {
+    font-size: 70px; 
+  }
 }

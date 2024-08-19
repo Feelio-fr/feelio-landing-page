@@ -1,7 +1,6 @@
 .buttonText {
   position: relative;
   letter-spacing: 0.1px;
-  line-height: 24px;
   font-weight: 500;
 }
 
@@ -92,9 +91,25 @@
   .buttonText {
     font-size: 18px;
   }
+}
 
-  .button {
-    width: 300px !important;
-    height: 50px !important;
+/* Large screens */
+@media (min-width: 2500px) {
+  .buttonText {
+    font-size: 60px;
+  }
+}
+
+/* Extra Large screens (4K) */
+@media (min-width: 3840px) {
+  .buttonText {
+    font-size: 80px;
+  }
+}
+
+/* Ultra Large screens (8K) */
+@media (min-width: 7680px) {
+  .buttonText {
+    font-size: 110px;
   }
 }

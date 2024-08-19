@@ -21,7 +21,6 @@
 }
 
 .lastCtaTitle{
-  font-size: 2rem;
   font-weight: bold;
   padding: 0;
   margin-bottom: 15px;
@@ -29,7 +28,6 @@
 }
 
 .lastCtaDesc{
-  font-size: 1.125rem;
   font-weight: 300;
 }
 
@@ -60,13 +58,5 @@
 
   .lastCtaText{
     width: 100%;
-  }
-
-  .lastCtaTitle{
-    font-size: 1.25rem;
-  }
-
-  .lastCtaDesc{
-    font-size: 0.875rem;
   }
 }

@@ -6,7 +6,6 @@
     flex-direction: column;
     justify-content: center;
     box-sizing: border-box;
-    font-size: var(--font-size-5xl);
     color: var(--white);
     padding-bottom: 30px;
 }
@@ -68,7 +67,6 @@
 }
 
 .sectionLegal {
-    font-size: 0.875rem;
     cursor: pointer;
     text-decoration: underline;
     color: var(--white);
@@ -90,7 +88,6 @@
 }
 
 .copyrightFeelio {
-    font-size: 1.2rem;
     font-weight: 100;
     text-align: center;
 
@@ -105,9 +102,6 @@
 
 /* Responsive design for tablets */
 @media (max-width: 1024px) {
-    .sectionLegal {
-        font-size: 0.875rem;
-    }
 
     .footerSubContent1, .footerSubContent2 {
         display: flex;
@@ -127,7 +121,6 @@
     }
 
     .copyrightFeelio{
-        font-size: 0.875rem;
         height: 30px;
 
         border-top: none; 
@@ -141,7 +134,6 @@
     }
 
     .sectionLegal {
-        font-size: 0.75rem;
         cursor: pointer;
         text-decoration: underline;
         color: var(--white);

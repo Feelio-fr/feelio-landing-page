@@ -9,25 +9,14 @@ export type ButtonType = {
   className?: string;
   buttonText?: string;
   icon?: string;
-
-  /** Style props */
-  buttonWidth?: CSSProperties["width"];
-  buttonHeight?: CSSProperties["height"];
 };
 
 const Button: FunctionComponent<ButtonType> = ({
   className = "",
   buttonText = "",
   icon,
-  buttonWidth,
-  buttonHeight,
 }) => {
   const [isModalOpen, setModalOpen] = useState(false);
-
-  const buttonStyle: CSSProperties = {
-    width: buttonWidth,
-    height: buttonHeight,
-  };
 
   const handleButtonClick = () => {
     setModalOpen(true);
@@ -53,7 +42,6 @@ const Button: FunctionComponent<ButtonType> = ({
     <>
       <div
         className={`${styles.button} ${className}`}
-        style={buttonStyle}
         onClick={handleButtonClick}
       >
         {buttonText && <div className={styles.buttonText}>{buttonText}</div>}

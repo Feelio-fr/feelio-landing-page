@@ -40,8 +40,6 @@ const LastCTA: FunctionComponent<LastCTAType> = ({ className = "" }) => {
         <Button
           buttonText="Je réserve ma place"
           icon="/padlock@2x.png"
-          buttonWidth="350px"
-          buttonHeight="60px"
         />
       </motion.div>
     </div>
