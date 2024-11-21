@@ -11,7 +11,7 @@ import FAQItem from "../../components/Question/Question";
 import RunningMan from "../../components/runningMan/RunningMan";
 import { motion, Variants } from "framer-motion";
 
-const DesktopFinalVersion: FunctionComponent = () => {
+const Homepage: FunctionComponent = () => {
   // Créer des références pour chaque section
   const problematiqueRef = useRef<HTMLDivElement>(null);
   const solutionRef = useRef<HTMLDivElement>(null);
@@ -67,7 +67,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
               viewport={{ once: true }}
             >
               <h1 className={styles.firstPageTitle}>
-                {`Un accompagnement sportif `}
+                {`Un accompagnement bien-être `}
                 <span className={styles.firstPageTitleDifferentColor}>
                   entièrement personnalisé
                 </span>
@@ -83,7 +83,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
               <div className={styles.textdescription}>
                 <div className={styles.firstpagedescription}>
                   <p className={styles.classicText}>
-                    Une application conçue pour <span>limiter vos risques de blessure</span>, <span>améliorer votre récupération</span> et <span>booster vos performances</span>.
+                    Une application conçue pour <span>améliorer votre mobilité</span>, <span>stimuler votre vitalité</span>, et <span>retrouver votre énergie</span>.
                   </p>
                 </div>
 
@@ -124,29 +124,29 @@ const DesktopFinalVersion: FunctionComponent = () => {
           </div>
           <div className={styles.problemContainer}>
             <ProblemComponent
+              icon="/hourglass.png"
+              title="Manque de temps"
+              description="Le rythme de vie moderne laisse peu de temps pour des activités physiques régulières."
+            />
+            <ProblemComponent
               icon="/back@2x.png"
               title="Douleurs"
               description="Les douleurs persistantes dues à des efforts physiques ou à une mauvaise posture affectent la qualité de vie et les performances sportives."
             />
+              <ProblemComponent
+                icon="/workfromhome-1@2x.png"
+                title="Sédentarité"
+                description="La sédentarité, rester assis ou allongé plus de 4 heures par jour (hors sommeil), réduit la mobilité et affecte négativement la santé."
+              />
             <ProblemComponent
               icon="/low-battery@2x.png"
               title="Fatigue"
-              description="Une mauvaise récupération peut entraîner une fatigue persistante, une limitation des performances sportives et une augmentation du risque de blessures."
+              description="La fatigue liée au rythme de vie impacte la qualité de vie, rendant chaque effort physique ou mental plus difficile à soutenir."
             />
             <ProblemComponent
-              icon="/equality@2x.png"
-              title="Stagnation"
-              description="La stagnation des performances sportives peut démotiver et freiner les progrès malgré les efforts fournis."
-            />
-            <ProblemComponent
-              icon="/patient@2x.png"
-              title="Blessures"
-              description="Les blessures sportives limitent fortement la progression et interrompent les routines d'entraînement."
-            />
-            <ProblemComponent
-              icon="/workfromhome-1@2x.png"
-              title="Sédentarité"
-              description="La sédentarité, rester assis ou allongé plus de 4 heures par jour (hors sommeil), réduit la mobilité et affecte négativement la santé et les performances sportives."
+              icon="/stress.png"
+              title="Démotivation"
+              description="Sans accompagnement adapté, il est facile de se sentir perdu, de manquer de repères et de perdre la motivation à poursuivre ses efforts."
             />
           </div>
         </div>
@@ -157,7 +157,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
           <h2 className={styles.title}>La solution ?</h2>
           <div className={styles.thirdpagetextcontent}>
             <div className={styles.solutionDescBold}>
-              <b>Fatigue, douleurs et stagnation ne sont plus une fatalité avec </b>
+              <b>Fatigue, douleurs et sédentarité ne sont plus une fatalité avec </b>
               <i className={styles.feelio}>Feelio</i>
               <b>.</b>
             </div>
@@ -165,12 +165,11 @@ const DesktopFinalVersion: FunctionComponent = () => {
               Grâce à notre intelligence artificielle et nos algorithmes avancés,
               Feelio analyse votre morpho-anatomie pour vous proposer des séances
               sur mesure, avec des exercices adaptés à votre profil et validés par
-              des professionnels de la santé.
+              des professionnels du sport et de la santé.
             </div>
             <b className={styles.solutionDescBold}>
-              Optez pour une solution innovante et efficace afin d’améliorer votre
-              mobilité, renforcer votre masse musculaire et vous prévenir des
-              blessures grâce aux séances Feelio.
+            Choisissez Feelio pour des séances qui vous accompagnent dans l’amélioration 
+            globale de votre corps, en toute simplicité et à votre rythme.
             </b>
           </div>
         </div>
@@ -186,7 +185,7 @@ const DesktopFinalVersion: FunctionComponent = () => {
             className={styles.step}
             sportsGymnastics="/sports-gymnastics.svg"
             stepTitle="Je renseigne mon profil utilisateur"
-            stepDesc="J'indique mes informations personnelles sur mon mode de vie et mes habitudes sportives."
+            stepDesc="J’indique mes informations personnelles, mes habitudes de vie et mes éventuels objectifs."
             alt="Quelqu'un qui fait du sport"
           />
           <Step
@@ -200,8 +199,8 @@ const DesktopFinalVersion: FunctionComponent = () => {
           <Step
             className={styles.step}
             sportsGymnastics="/sentiment-very-satisfied.svg"
-            stepTitle="Je profite des séances 100% personnalisées"
-            stepDesc="Je peux maintenant réaliser des séances quotidiennes et des séances avant et après mon entaînement sportif."
+            stepTitle="Je profite des séances personnalisées"
+            stepDesc="Je peux maintenant réaliser des séances quotidiennes et variées, conçues pour améliorer chaque aspect de mon corps."
             isLast={true}
             alt="Quelqu'un qui sourit"
           />
@@ -211,24 +210,20 @@ const DesktopFinalVersion: FunctionComponent = () => {
       <div id="FAQ" ref={faqRef} className={styles.fifthpage}>
         <h2 className={styles.title}>F.A.Q</h2>
         <FAQItem
-          question="Est-ce que Feelio convient à tous les niveaux sportifs&nbsp;?"
-          answer="Oui, Feelio convient à tous les niveaux sportifs des débutants aux sportifs plus confirmés. Après avoir analysé votre morphologie et votre niveau de pratique sportive, l'application vous proposera des séances d'entraînement personnalisées, conçues pour répondre à vos besoins spécifiques."
-        />
-        <FAQItem
           question="Quels types d'exercices sont inclus dans les séances Feelio&nbsp;?"
-          answer="Les séances Feelio incluent une variété d'exercices allant du renforcement musculaire au travail de mobilité, en passant par des exercices de récupération et de prévention des blessures."
-        />
-        <FAQItem
-          question="Puis-je utiliser Feelio en complément d'un autre programme d'entraînement&nbsp;?"
-          answer="Absolument. Feelio peut compléter votre programme d'entraînement actuel en vous offrant des séances de récupération et des exercices spécifiques pour améliorer vos performances et prévenir les blessures."
+          answer="Les séances Feelio proposent une variété d'exercices conçus pour développer de manière globale les capacités physiques, allant du renforcement musculaire à la mobilité, en passant par la coordination et la souplesse."
         />
         <FAQItem
           question="Est-ce que Feelio est une application médicale&nbsp;?"
-          answer="Non, Feelio n'est pas une application médicale. Nos programmes d'entraînement sont conçus pour améliorer votre performance et votre bien-être, mais ils ne remplacent en aucun cas les conseils et traitements fournis par des professionnels de la santé."
+          answer="Non, Feelio n'est pas une application médicale. Nos programmes d'entraînement sont conçus pour améliorer globalement votre bien-être, mais ils ne remplacent en aucun cas les conseils et traitements fournis par des professionnels de la santé."
           />
         <FAQItem
-          question="Les séances Feelio sont elles validées par des experts de la santé&nbsp;?"
-          answer="Feelio collabore étroitement avec des professionnels de la santé pour garantir que chaque séance d'entraînement est sûre et efficace. Nos algorithmes et exercices sont validés par des experts en médecine du sport pour vous offrir un accompagnement sportif de la plus haute qualité."
+          question="Les séances Feelio sont elles validées par des experts &nbsp;?"
+          answer="Feelio collabore étroitement avec des professionnels du sport et de la santé pour garantir que chaque séance est sûre et efficace. Nos algorithmes et exercices sont validés par des experts en médecine du sport pour vous offrir un accompagnement de la plus haute qualité."
+        />
+        <FAQItem
+          question="Puis-je utiliser Feelio en complément d'un autre programme d'entraînement&nbsp;?"
+          answer="Absolument. Feelio peut enrichir votre routine d'entraînement en vous proposant des séances adaptées pour renforcer vos points faibles, améliorer votre mobilité et optimiser vos performances."
         />
         <FAQItem
           question="Est-ce que mes vidéos et images sont stockées lors de l'analyse morpho-anatomique&nbsp;?"
@@ -246,4 +241,4 @@ const DesktopFinalVersion: FunctionComponent = () => {
   );
 };
 
-export default DesktopFinalVersion;
+export default Homepage;

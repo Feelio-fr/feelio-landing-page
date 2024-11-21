@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import DesktopFinalVersion from "./pages/Homepage/Homepage";
+import Homepage from "./pages/Homepage/Homepage";
 import Modal from "./components/Modal/Modal"; 
 import LegalNotice from "./pages/LegalNotice/LegalNotice"; 
 import  PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
@@ -48,7 +48,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<DesktopFinalVersion />} />
+        <Route path="/" element={<Homepage />} />
         <Route path="/mentions-legales" element={<LegalNotice />} />        
         <Route path="/politique-de-confidentialite" element={<PrivacyPolicy />} />
         <Route path="/desinscription/:token" element={<Unsubscribe />} />
